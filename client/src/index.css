@@ -57,7 +57,12 @@ button {
   font-size: 1.2rem;
   border-radius: var(--rounded-03);
   font-weight: 500;
+  margin-bottom: 40px;
   transition: 0.25s;
+}
+
+.container-px {
+  padding: 0 5%;
 }
 
 @media screen and (max-width: 414px) {
