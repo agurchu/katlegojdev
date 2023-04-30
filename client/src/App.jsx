@@ -1,5 +1,8 @@
 import "./App.css";
+import React from "react";
 import Profile from "./portfolioContainer/home/Profile";
+import Footer from "./portfolioContainer/home/footer/footer";
+
 {
   /* 
 
@@ -15,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Profile />
+      <Footer />
     </div>
   );
 }
