@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 *,
 *::after,
 *::before {
@@ -9,7 +11,10 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Poppins" sans-serif;
+  text-align: center;
+  background: var(--dark);
+  color: var(--white);
 }
 html {
   font-size: 62.5%;
@@ -31,11 +36,6 @@ html {
 body::-webkit-scrollbar-thumb {
   background: rgb(185, 239, 224, 0.2);
 }
-body {
-  text-align: center;
-  background: var(--dark);
-  color: var(--white);
-}
 
 ::-webkit-scrollbar {
   width: 6px !important;
@@ -52,7 +52,7 @@ button {
   cursor: pointer;
 }
 
-.btn {
+.button {
   padding: 8px 20px;
   font-size: 1.2rem;
   border-radius: var(--rounded-03);
@@ -66,16 +66,16 @@ button {
 }
 
 @media screen and (max-width: 414px) {
-  .btn {
+  .button {
     font-size: 1.4rem;
   }
 }
 
-.btn:active {
+.button:active {
   transform: translateY(2px);
 }
 
-.btn-primary {
+.button-primary {
   color: var(--white);
   background: var(--primary);
 }
@@ -97,7 +97,7 @@ h3 {
 }
 
 @media screen and (max-width: 568px) {
-  .btn-highlighted {
+  .button-highlighted {
     z-index: -900;
   }
 }

@@ -62,7 +62,7 @@ export default function Profile() {
           </div>
 
           <div className="profile__options">
-            <button className="btn btn-primary">Hire Me</button>
+            <button className="button button-primary">Hire Me</button>
           </div>
         </div>
         <div className="profile__image">

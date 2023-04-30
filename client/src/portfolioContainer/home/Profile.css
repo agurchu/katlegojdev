@@ -27,7 +27,12 @@
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
   color: var(--secondary);
+}
+
+.profile__details {
+  flex: 1;
 }
 
 .profile__details-name {
@@ -154,6 +159,7 @@
 
   .profile__details {
     margin: 25px 0 0;
+    text-align: center;
   }
 }
 

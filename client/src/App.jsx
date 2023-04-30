@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import Profile from "./portfolioContainer/home/Profile";
 import Footer from "./portfolioContainer/home/footer/footer";
+import NavBar from "./portfolioContainer/navbar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 {
   /* 
@@ -17,6 +19,7 @@ import Footer from "./portfolioContainer/home/footer/footer";
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Profile />
       <Footer />
     </div>
