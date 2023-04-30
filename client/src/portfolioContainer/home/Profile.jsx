@@ -25,8 +25,8 @@ export default function Profile() {
   };
 
   return (
-    <div className="profile__container container-px">
-      <div className="profile-parent">
+    <div className="profile__container ">
+      <div className="profile-parent container">
         <div className="profile__details">
           <div className="cols">
             <div className="cols__icon">

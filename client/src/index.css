@@ -80,6 +80,10 @@ button {
   background: var(--primary);
 }
 
+.background {
+  background-color: var(--dark);
+}
+
 h1 {
   font-size: 3.5rem;
 }

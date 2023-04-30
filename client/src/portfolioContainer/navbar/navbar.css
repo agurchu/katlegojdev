@@ -1,0 +1,19 @@
+.nav__container {
+  position: fixed;
+  right: 0;
+  height: 70px;
+  display: flex;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav__image {
+  height: 40px;
+}
+
+.nav__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

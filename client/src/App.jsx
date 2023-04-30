@@ -20,7 +20,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+
       <Profile />
+
       <Footer />
     </div>
   );

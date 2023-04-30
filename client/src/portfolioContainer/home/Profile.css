@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: center;
   min-height: fit-content;
-  height: 10%;
+  height: calc(100% - 70px);
+  top: 70px;
   width: 100vw;
   position: relative;
 }
