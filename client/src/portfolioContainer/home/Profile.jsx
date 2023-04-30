@@ -1,4 +1,4 @@
-import React from "react";
+import "./Profile.css";
 import Typical from "react-typical";
 
 export default function Profile() {
@@ -65,7 +65,11 @@ export default function Profile() {
             <button className="btn btn-primary">Hire Me</button>
           </div>
         </div>
-        <div className="profile__imgage"></div>
+        <div className="profile__image">
+          <div className="profile__image-box">
+            <div className="profile__image-background"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
