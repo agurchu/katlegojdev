@@ -16,15 +16,58 @@ html {
 }
 
 :root {
-  --color-primary: #00e9aa;
-  --color-secondary: #b9efe0;
-  --color-dark: #2d4841;
-  --color-white: #fff;
+  --primary: #00e9aa;
+  --secondary: rgb(185, 239, 224);
+  --dark: rgb(45, 72, 65);
+  --white: #fff;
+  --color-error: red;
+
+  --rounded-01: 8px;
+  --rounded-02: 14px;
+  --rounded-03: 50px;
+  --rounded-full: 50%;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(185, 239, 224, 0.2);
+}
+
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 72, 65, 0.2);
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(185, 239, 224, 0.1);
+}
+button {
+  cursor: pointer;
 }
 
 .btn {
-  padding: 8px 12px;
-  font-size: 1.6rem;
+  padding: 8px 20px;
+  font-size: 1.2rem;
+  border-radius: var(--rounded-03);
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+@media screen and (max-width: 414px) {
+  .btn {
+    font-size: 1.4rem;
+  }
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btn-primary {
+  color: var(--white);
+  background: var(--primary);
 }
 
 h1 {
@@ -37,4 +80,29 @@ h2 {
 
 h3 {
   font-size: 2rem;
+}
+
+span,
+.bx {
+  font-size: 1.6rem;
+}
+
+body {
+  text-align: center;
+}
+
+@media screen and (max-width: 568px) {
+  .btn-highlighted {
+    z-index: -900;
+  }
+}
+
+.border-red {
+  border: 1px solid var(--color-error) !important;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
 }

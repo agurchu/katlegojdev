@@ -29,18 +29,20 @@ export default function Profile() {
       <div className="profile-parent">
         <div className="profile__details">
           <div className="cols">
-            <a target="_blank" href="#">
-              <i class="bx bxl-github"></i>
-            </a>
-            <a target="_blank" href="#">
-              <i class="bx bxl-facebook-circle"></i>
-            </a>
-            <a target="_blank" href="#">
-              <i class="bx bxl-linkedin"></i>
-            </a>
-            <a target="_blank" href="#">
-              <i class="bx bxl-instagram"></i>
-            </a>
+            <div className="cols__icon">
+              <a target="_blank" href="#">
+                <i class="bx bxl-github"></i>
+              </a>
+              <a target="_blank" href="#">
+                <i class="bx bxl-facebook-circle"></i>
+              </a>
+              <a target="_blank" href="#">
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a target="_blank" href="#">
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </div>
           </div>
 
           <div className="profile__details-name">
@@ -63,6 +65,7 @@ export default function Profile() {
             <button className="btn btn-primary">Hire Me</button>
           </div>
         </div>
+        <div className="profile__imgage"></div>
       </div>
     </div>
   );
