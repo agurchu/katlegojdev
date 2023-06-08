@@ -26,7 +26,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="profile__container">
+    <div id="home" className="profile__container">
       <div className="profile-parent container">
         <div className="profile__details">
           <div className="cols">

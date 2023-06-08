@@ -29,7 +29,7 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="contactMe container-px">
+    <div id="contact" className="contactMe container-px">
       <div className="contactMe__heading">
         <h1>Contact Me</h1>
         <p>Let's discuss and bring your web development ideas to life!</p>

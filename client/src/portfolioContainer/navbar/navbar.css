@@ -3,9 +3,9 @@
   right: 0;
   /* background-color: var(--dark); */
   backdrop-filter: blur(
-    20px
+    12px
   ); /* Adjust the blur value as per your preference */
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(64, 64, 64, 0.5);
   height: 70px;
   display: flex;
   left: 0;
@@ -21,4 +21,32 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.nav_items {
+  display: flex;
+  justify-content: space-between;
+  max-width: 550px;
+  width: 100%;
+}
+
+.nav_items li a {
+  font-size: 1.8rem;
+  color: rgb(255, 254, 254);
+  transition: all 0.25s ease-in-out;
+}
+.nav_items li a:hover,
+.nav_items li .active {
+  color: var(--primary);
+}
+
+@media screen and (max-width: 992px) {
+  .nav_items {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .nav_items {
+    display: none;
+  }
 }

@@ -4,6 +4,7 @@ import Profile from "./portfolioContainer/home/Profile";
 import NavBar from "./portfolioContainer/navbar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContactMe from "./portfolioContainer/contactMe/ContactMe";
+import { Route, Routes } from "react-router-dom";
 
 {
   /* 
@@ -18,12 +19,12 @@ import ContactMe from "./portfolioContainer/contactMe/ContactMe";
 
 function App() {
   return (
-    <div>
+    <>
       <NavBar />
-      <Profile />
 
+      <Profile />
       <ContactMe />
-    </div>
+    </>
   );
 }
 
