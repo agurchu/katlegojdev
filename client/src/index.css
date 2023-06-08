@@ -19,13 +19,14 @@ a {
 }
 
 body {
-  font-family: "Poppins" sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   background: var(--white);
   color: var(--white);
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 :root {

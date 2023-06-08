@@ -5,38 +5,37 @@ import "./aboutMe.css";
 
 export default function AboutMe() {
   return (
-    <div className="text-secondary">
+    <div id="about" className="container-px about">
       <SectionHeading
         title="About Me"
         body="Web Developer | Creating Engaging Digital Experiences"
       />
       <div className="box">
-        <div className="w-1/2 image">
-          <img className="w-full" src={kat_graduate} alt="" />
+        <div className=" image">
+          <img src={kat_graduate} alt="" />
         </div>
         <div className="content">
           <div className="text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-              numquam distinctio eum omnis praesentium quia, quidem veritatis
-              temporibus facilis dolor nulla aliquam libero ullam aut similique,
-              repellendus dicta delectus. Incidunt ipsa officiis iusto libero
-              quibusdam repellendus a nemo in aliquam illo aspernatur sint
-              accusamus, odio unde, ducimus eaque aperiam reprehenderit tempore
-              quisquam odit quo nostrum? Veniam enim quis vitae, sit nemo illum,
-              eaque dolor tempora incidunt officia aperiam voluptatibus. Ducimus
-              id cum dolores officia. Sequi, expedita. Similique deleniti
-              possimus quas voluptas mollitia est velit. Totam quas aut facere
-              perspiciatis accusantium, cum reiciendis expedita eveniet officia?
-              Doloribus magnam tempora omnis voluptates.
+              A self-motivated individual with a BSc in Biomedical Science and a
+              passion for frontend web development, also worked on full stack
+              projects.
+            </p>
+            <p>
+              As a multipotentialite, I bring a diverse range of skills and
+              interests to the table, allowing me to approach projects with a
+              unique perspective and think creatively.With strong
+              problem-solving abilities, attention to detail, and a dedication
+              to delivering high-quality work, I am confident in my ability to
+              contribute to impactful web solutions.
             </p>
           </div>
           <div className="skils">
             <h2>Hightlights</h2>
             <ul>
               <h3>Web Development Skills</h3>
-              <li>React JS, JavaScript, Node JS, HTML, CSS, SEO </li>
-              <li>Bootstrap, Tailwind, Express JS, Git, GitHub, Redux</li>
+              <li>React JS, JavaScript, Node JS, HTML, CSS, SEO, </li>
+              <li>Bootstrap, Tailwind, Express JS, Git, GitHub, Redux, </li>
               <li>MongoDB, Visual Studio Code, Adobe Photoshop, Material UI</li>
             </ul>
             <ul>
