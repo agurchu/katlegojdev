@@ -1,8 +1,15 @@
 const express = require("express");
+const app = express();
 const bodyParser = require("body-parser");
 const emailService = require("./emailService");
+const cors = require("cors");
 
-const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));

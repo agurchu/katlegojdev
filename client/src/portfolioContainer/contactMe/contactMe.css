@@ -1,6 +1,7 @@
 .contactMe {
   height: 100vh;
   display: flex;
+  padding-top: 90px !important;
   flex-direction: column;
 }
 

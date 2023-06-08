@@ -5,7 +5,7 @@ import NavBar from "./portfolioContainer/navbar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContactMe from "./portfolioContainer/contactMe/ContactMe";
 import { Route, Routes } from "react-router-dom";
-
+import axios from "axios";
 {
   /* 
 
@@ -16,7 +16,7 @@ import { Route, Routes } from "react-router-dom";
 <i class="bx bxl-css3"></i>
 <i class="bx bxs-user"></i> */
 }
-
+axios.defaults.baseURL = "http://localhost:8000";
 function App() {
   return (
     <>

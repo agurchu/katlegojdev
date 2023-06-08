@@ -14,7 +14,7 @@ export default function ContactMe() {
     const formData = { name, email, message };
 
     try {
-      await axios.post("/send_email", formData);
+      await axios.post("/send-email", formData);
       alert(
         "Message sent successfully. Thank you, we will get back to you soon!"
       );
