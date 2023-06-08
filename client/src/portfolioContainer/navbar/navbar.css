@@ -1,6 +1,7 @@
 .nav__container {
   position: fixed;
   right: 0;
+  background-color: var(--dark);
   height: 70px;
   display: flex;
   left: 0;

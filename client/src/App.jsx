@@ -4,6 +4,7 @@ import Profile from "./portfolioContainer/home/Profile";
 import Footer from "./portfolioContainer/home/footer/footer";
 import NavBar from "./portfolioContainer/navbar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ContactMe from "./portfolioContainer/contactMe/ContactMe";
 
 {
   /* 
@@ -22,8 +23,7 @@ function App() {
       <NavBar />
 
       <Profile />
-
-      <Footer />
+      <ContactMe />
     </div>
   );
 }

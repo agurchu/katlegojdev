@@ -1,5 +1,6 @@
 import "./Profile.css";
 import Typical from "react-typical";
+import Footer from "./footer/footer";
 
 export default function Profile() {
   const typeAnimation = () => {
@@ -25,7 +26,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="profile__container ">
+    <div className="profile__container">
       <div className="profile-parent container">
         <div className="profile__details">
           <div className="cols">
@@ -44,14 +45,12 @@ export default function Profile() {
               </a>
             </div>
           </div>
-
           <div className="profile__details-name">
             <span className="primary__text">
               Hello! I'm{" "}
               <span className="highlighted-text">Katlego Mtimane</span>{" "}
             </span>
           </div>
-
           <div className="profile__details-role">
             <span className="primary__text">
               <h1>{typeAnimation()}</h1>
@@ -60,7 +59,6 @@ export default function Profile() {
               </span>
             </span>
           </div>
-
           <div className="profile__options">
             <button className="button button-primary">Hire Me</button>
           </div>
@@ -71,6 +69,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
