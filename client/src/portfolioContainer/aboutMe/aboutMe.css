@@ -1,0 +1,14 @@
+.box {
+  display: flex;
+  width: 500px;
+  background-color: var(--dark);
+  margin: 0 auto;
+}
+
+.image {
+  width: 50%;
+}
+
+.image img {
+  width: 100%;
+}
