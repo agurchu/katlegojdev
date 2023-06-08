@@ -32,16 +32,16 @@ export default function Profile() {
           <div className="cols">
             <div className="cols__icon">
               <a target="_blank" href="#">
-                <i class="bx bxl-github"></i>
+                <i className="bx bxl-github"></i>
               </a>
               <a target="_blank" href="#">
-                <i class="bx bxl-facebook-circle"></i>
+                <i className="bx bxl-facebook-circle"></i>
               </a>
               <a target="_blank" href="#">
-                <i class="bx bxl-linkedin"></i>
+                <i className="bx bxl-linkedin"></i>
               </a>
               <a target="_blank" href="#">
-                <i class="bx bxl-instagram"></i>
+                <i className="bx bxl-instagram"></i>
               </a>
             </div>
           </div>

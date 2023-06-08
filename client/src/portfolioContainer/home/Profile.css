@@ -1,9 +1,10 @@
 .profile__container {
-  display: flex;
-  flex-direction: column;
+  display: block;
   align-items: center;
   justify-content: center;
-  min-height: fit-content;
+  height: fit-content;
+  margin: 0;
+  padding: 100px 0 0;
   z-index: 0;
   width: 100vw;
   position: relative;
@@ -29,7 +30,7 @@
 .profile-parent {
   display: flex;
   width: 100%;
-  margin-top: 70px;
+  margin-bottom: -170px;
   align-items: center;
   justify-content: center;
   color: var(--secondary);
@@ -37,10 +38,11 @@
 
 .profile__details {
   flex: 1;
+  text-align: left;
 }
 
 .profile__details-name {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
@@ -127,7 +129,7 @@
 
 @media screen and (max-width: 1110px) {
   .profile__image {
-    margin: 40px 0 80px;
+    margin: 0px 0 100px;
   }
 
   .profile__details-name {
@@ -147,7 +149,6 @@
   .profile__image {
     height: 320px;
     width: 320px;
-    margin: 40px 0 40px;
   }
 }
 
@@ -158,12 +159,16 @@
 
   .profile-parent {
     flex-direction: column-reverse;
-    margin: 100px 0 -60px;
   }
 
   .profile__details {
-    margin: 25px 0 0;
+    margin: 25px 0 70px;
     text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .profile__details {
+    margin: 25px 0 100px;
   }
 }
 
