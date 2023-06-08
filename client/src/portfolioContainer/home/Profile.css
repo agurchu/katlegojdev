@@ -1,3 +1,7 @@
+.home {
+  position: relative;
+}
+
 .profile__container {
   display: block;
   align-items: center;

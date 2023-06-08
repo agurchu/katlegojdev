@@ -1,6 +1,8 @@
 import React from "react";
 import SectionHeading from "../../components/SectionHeading";
 import kat_graduate from "../../assets/kat-graduate.png";
+import webdev from "../../assets/webdevicon.png";
+
 import "./aboutMe.css";
 
 export default function AboutMe() {
@@ -50,6 +52,7 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
+      <img className="bg_webicon" src={webdev} alt="" />
     </div>
   );
 }

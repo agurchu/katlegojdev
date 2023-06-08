@@ -1,6 +1,7 @@
 import "./Profile.css";
 import Typical from "react-typical";
 import Footer from "./footer/footer";
+import webdev from "../../assets/websearch.png";
 
 export default function Profile() {
   const typeAnimation = () => {
@@ -26,50 +27,53 @@ export default function Profile() {
   };
 
   return (
-    <div id="home" className="profile__container">
-      <div className="profile-parent container">
-        <div className="profile__details">
-          <div className="cols">
-            <div className="cols__icon">
-              <a target="_blank" href="#">
-                <i className="bx bxl-github"></i>
-              </a>
-              <a target="_blank" href="#">
-                <i className="bx bxl-facebook-circle"></i>
-              </a>
-              <a target="_blank" href="#">
-                <i className="bx bxl-linkedin"></i>
-              </a>
-              <a target="_blank" href="#">
-                <i className="bx bxl-instagram"></i>
-              </a>
+    <section className="home">
+      <div id="home" className="profile__container">
+        <div className="profile-parent container">
+          <div className="profile__details">
+            <div className="cols">
+              <div className="cols__icon">
+                <a target="_blank" href="#">
+                  <i className="bx bxl-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i className="bx bxl-facebook-circle"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i className="bx bxl-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i className="bx bxl-instagram"></i>
+                </a>
+              </div>
+            </div>
+            <div className="profile__details-name">
+              <span className="primary__text">
+                Hello! I'm{" "}
+                <span className="highlighted-text">Katlego Mtimane</span>{" "}
+              </span>
+            </div>
+            <div className="profile__details-role">
+              <span className="primary__text">
+                <h1>{typeAnimation()}</h1>
+                <span className="profile-role_tagline">
+                  Transforming ideas of applications into stunning realities.
+                </span>
+              </span>
+            </div>
+            <div className="profile__options">
+              <button className="button button-primary">Hire Me</button>
             </div>
           </div>
-          <div className="profile__details-name">
-            <span className="primary__text">
-              Hello! I'm{" "}
-              <span className="highlighted-text">Katlego Mtimane</span>{" "}
-            </span>
-          </div>
-          <div className="profile__details-role">
-            <span className="primary__text">
-              <h1>{typeAnimation()}</h1>
-              <span className="profile-role_tagline">
-                Transforming ideas of applications into stunning realities.
-              </span>
-            </span>
-          </div>
-          <div className="profile__options">
-            <button className="button button-primary">Hire Me</button>
+          <div className="profile__image">
+            <div className="profile__image-box">
+              <div className="profile__image-background"></div>
+            </div>
           </div>
         </div>
-        <div className="profile__image">
-          <div className="profile__image-box">
-            <div className="profile__image-background"></div>
-          </div>
-        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+      <img className="bg_webicon2" src={webdev} alt="" />
+    </section>
   );
 }

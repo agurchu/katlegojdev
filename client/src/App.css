@@ -37,3 +37,20 @@
   right: 0;
   transform: translateY(-50%);
 }
+
+.bg_webicon {
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0.25;
+  z-index: -1;
+}
+.bg_webicon2 {
+  position: absolute;
+  bottom: -50%;
+  transform: translateY(-50%);
+  right: 0;
+  opacity: 0.25;
+  z-index: 0;
+}
