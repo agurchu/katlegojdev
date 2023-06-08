@@ -1,0 +1,39 @@
+.contactMe__heading {
+  color: var(--dark);
+  max-width: 340px;
+  margin: 0 auto 30px;
+}
+
+.contactMe__heading p {
+  font-size: 1.2rem;
+}
+
+.contactMe__heading div {
+  background: var(--dark);
+  width: 100%;
+  height: 3px;
+  position: relative;
+  border-radius: var(--rounded-01);
+}
+.contactMe__heading div::before {
+  content: "";
+  background-color: var(--primary);
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  border-radius: var(--rounded-01);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.contactMe__heading div::after {
+  content: "";
+  background-color: var(--primary);
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  border-radius: var(--rounded-01);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}

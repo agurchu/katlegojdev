@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ContactMe from "./portfolioContainer/contactMe/ContactMe";
 import { Route, Routes } from "react-router-dom";
 import axios from "axios";
+import AboutMe from "./portfolioContainer/aboutMe/AboutMe";
 {
   /* 
 
@@ -21,8 +22,8 @@ function App() {
   return (
     <>
       <NavBar />
-
       <Profile />
+      <AboutMe />
       <ContactMe />
     </>
   );

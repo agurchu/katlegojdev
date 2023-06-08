@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import contactme from "../../assets/contactme.png";
 import axios from "axios";
 import "./contactMe.css";
+import SectionHeading from "../../components/SectionHeading";
 
 export default function ContactMe() {
   const [name, setName] = useState("");
@@ -30,11 +31,11 @@ export default function ContactMe() {
 
   return (
     <div id="contact" className="contactMe container-px">
-      <div className="contactMe__heading">
-        <h1>Contact Me</h1>
-        <p>Let's discuss and bring your web development ideas to life!</p>
-        <div></div>
-      </div>
+      <SectionHeading
+        title="Contact Me"
+        body="Let's discuss and bring your web development ideas to life!"
+      />
+
       <div className="background rounded-md mx-auto form__div ">
         <h2>Get In Touch!</h2>
         <div className="contact__extra">
