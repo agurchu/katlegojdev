@@ -1,4 +1,11 @@
 .services {
   color: var(--dark);
-  padding-top: 80px;
+  padding-top: 80px !important;
+}
+
+.services .badges {
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 }

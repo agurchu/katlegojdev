@@ -1,13 +1,12 @@
 import React from "react";
-import { FaReact } from "react-icons/fa";
 import { BsBoxArrowInRight } from "react-icons/bs";
 
-export default function ServiceBadge() {
+export default function ServiceBadge({ icon, title, onClick }) {
   return (
     <div className="service_box">
-      <div className="service_icon">{<FaReact size={32} />}</div>
-      <h2>Frontend Developer</h2>
-      <button className="service_btn">
+      <div className="service_icon">{icon}</div>
+      <h2>{title}</h2>
+      <button onClick={onClick} className="service_btn">
         View More{" "}
         <span>
           <BsBoxArrowInRight size={12} />
