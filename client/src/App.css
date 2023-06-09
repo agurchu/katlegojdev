@@ -51,6 +51,39 @@
   bottom: -50%;
   transform: translateY(-50%);
   right: 0;
-  opacity: 0.25;
+  opacity: 0.15;
   z-index: 0;
+}
+
+.service_box {
+  box-shadow: 0 0 5px #0000001e;
+  background-color: white;
+  max-width: 180px;
+  padding: 40px 20px 30px;
+  text-align: left;
+  border-radius: var(--rounded-01);
+}
+.service_box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.service_box .service_icon {
+  margin-bottom: 20px;
+}
+
+.service_box .service_btn {
+  background-color: transparent;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  transition: all 0.25s;
+}
+
+.service_box .service_btn:hover span {
+  padding-left: 2.5px;
+}
+
+.service_box .service_btn:focus {
+  color: var(--primary);
 }

@@ -7,6 +7,7 @@ import ContactMe from "./portfolioContainer/contactMe/ContactMe";
 import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import AboutMe from "./portfolioContainer/aboutMe/AboutMe";
+import Services from "./portfolioContainer/services/Services";
 {
   /* 
 
@@ -24,6 +25,7 @@ function App() {
       <NavBar />
       <Profile />
       <AboutMe />
+      <Services />
       <ContactMe />
     </>
   );
