@@ -98,12 +98,50 @@
   align-items: center;
   top: 0;
   left: 0;
+  z-index: 1000;
   bottom: 0;
   right: 0;
 }
 
 .viewMore_box {
   background-color: white;
-  padding: 30px;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 500px;
   border-radius: var(--rounded-02);
+  position: relative;
+}
+
+.viewMore_box .icon {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  top: 20px;
+}
+
+.viewMore_box .heading {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+.viewMore_box .heading h3 {
+  margin-bottom: 10px;
+}
+
+.viewMore_box .heading p {
+  font-size: 1.2rem;
+}
+
+.viewMore_box ul li {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.viewMore_box .listicon {
+  margin-left: -20px;
+}
+
+.viewMore_box span {
+  margin-left: 7px;
 }
