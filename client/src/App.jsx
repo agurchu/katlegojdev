@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import AboutMe from "./portfolioContainer/aboutMe/AboutMe";
 import Services from "./portfolioContainer/services/Services";
+import Projects from "./portfolioContainer/projects/Projects";
 {
   /* 
 
@@ -26,6 +27,7 @@ function App() {
       <Profile />
       <AboutMe />
       <Services />
+      <Projects />
       <ContactMe />
     </>
   );

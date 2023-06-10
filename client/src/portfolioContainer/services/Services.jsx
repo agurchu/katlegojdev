@@ -6,7 +6,7 @@ import { ServiceData } from "../../data/ServiceData";
 
 export default function Services() {
   return (
-    <section id="services" className="container-px services">
+    <section id="services" className="container services">
       <SectionHeading title={"Services"} body={"Crafting Digital Solutions"} />
       <div className="badges grid grid-cols-footer">
         {ServiceData &&

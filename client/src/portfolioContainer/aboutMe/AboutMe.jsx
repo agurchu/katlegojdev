@@ -7,7 +7,7 @@ import "./aboutMe.css";
 
 export default function AboutMe() {
   return (
-    <div id="about" className="container-px about">
+    <div id="about" className="container about">
       <SectionHeading
         title="About Me"
         body="Web Developer | Creating Engaging Digital Experiences"

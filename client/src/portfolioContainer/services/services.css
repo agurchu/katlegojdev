@@ -1,6 +1,7 @@
 .services {
   color: var(--dark);
   padding-top: 80px !important;
+  margin-bottom: 40px;
 }
 
 .services .badges {

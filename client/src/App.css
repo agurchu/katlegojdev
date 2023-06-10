@@ -43,7 +43,7 @@
   bottom: -50%;
   left: 0;
   transform: translateY(-50%);
-  opacity: 0.25;
+  opacity: 0.1;
   z-index: -1;
 }
 .bg_webicon2 {
@@ -51,7 +51,7 @@
   bottom: -50%;
   transform: translateY(-50%);
   right: 0;
-  opacity: 0.15;
+  opacity: 0.1;
   z-index: 0;
 }
 
@@ -144,4 +144,24 @@
 
 .viewMore_box span {
   margin-left: 7px;
+}
+
+.project_content {
+  background-color: white;
+  display: grid;
+  padding: 20px;
+  justify-items: center;
+  box-shadow: 0 0 5px #0000001a;
+  gap: 20px;
+  border-radius: var(--rounded-02);
+  color: var(--dark);
+  max-width: 300px;
+}
+
+.project_content img {
+  height: 40px;
+}
+
+.project_content p {
+  font-size: 1.2rem;
 }

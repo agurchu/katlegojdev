@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import contactme from "../../assets/contactme.png";
+import { RiMailSendLine } from "react-icons/ri";
+import { FiPhoneCall } from "react-icons/fi";
 import axios from "axios";
 import "./contactMe.css";
 import SectionHeading from "../../components/SectionHeading";
+import webdevvector from "../../assets/webdevvector.png";
 
 export default function ContactMe() {
   const [name, setName] = useState("");
@@ -30,7 +32,7 @@ export default function ContactMe() {
   };
 
   return (
-    <div id="contact" className="contactMe container-px">
+    <section id="contact" className="contactMe container">
       <SectionHeading
         title="Contact Me"
         body="Let's discuss and bring your web development ideas to life!"
@@ -39,9 +41,15 @@ export default function ContactMe() {
       <div className="background rounded-md mx-auto form__div ">
         <h2>Get In Touch!</h2>
         <div className="contact__extra">
-          <h3>Send Your Email Here!</h3>
           <div className="contact__img">
-            <img src={contactme} alt="" />
+            <RiMailSendLine size={28} />
+            <h3>Email</h3>
+            <p>katlegoj.dev@gmail.com</p>
+          </div>
+          <div className="contact__img">
+            <FiPhoneCall size={28} />
+            <h3>Phone</h3>
+            <p>+27 614 361 437</p>
           </div>
         </div>
         <form onSubmit={handleSubmit}>
@@ -73,6 +81,9 @@ export default function ContactMe() {
           <button type="submit">Send</button>
         </form>
       </div>
-    </div>
+      <div className="bg_webicon">
+        <img src={webdevvector} alt="" />
+      </div>
+    </section>
   );
 }
