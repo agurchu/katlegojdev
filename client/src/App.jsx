@@ -9,6 +9,7 @@ import axios from "axios";
 import AboutMe from "./portfolioContainer/aboutMe/AboutMe";
 import Services from "./portfolioContainer/services/Services";
 import Projects from "./portfolioContainer/projects/Projects";
+import Featured from "./portfolioContainer/featured/Featured";
 {
   /* 
 
@@ -29,6 +30,7 @@ function App() {
       <Services />
       <Projects />
       <ContactMe />
+      <Featured />
     </>
   );
 }
