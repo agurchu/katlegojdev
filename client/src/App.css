@@ -149,13 +149,14 @@
 .project_content {
   background-color: white;
   display: grid;
+  grid-template-rows: 50px 40px 1fr 1fr;
   padding: 20px;
   justify-items: center;
   box-shadow: 0 0 5px #0000001a;
   gap: 20px;
   border-radius: var(--rounded-02);
   color: var(--dark);
-  max-width: 300px;
+  /* max-width: 300px; */
 }
 
 .project_content img {
@@ -164,4 +165,58 @@
 
 .project_content p {
   font-size: 1.2rem;
+  position: relative;
+}
+.project_content p::after {
+  border-bottom: 1px solid var(--secondary);
+  border-radius: var(--rounded-01);
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+}
+
+.project_content ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.project_content small {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.project_content ul li {
+  background-color: var(--primary);
+  padding: 3px 12px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  border-radius: var(--rounded-03);
+}
+
+.project_content a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.project_content a:hover {
+  color: var(--dark);
+}
+
+.project_content a span {
+  margin-left: 5px;
+}
+
+.project_content .btns {
+  border-bottom: 1px solid var(--primary);
+
+  padding: 5px 10px;
+  border-radius: var(--rounded-01);
 }

@@ -10,16 +10,28 @@ export default function ProjectBadge({ item }) {
         {item.title} <br /> <small>Website</small>
       </h4>
       <p>{item.body} </p>
+      {item.list && (
+        <div>
+          <small>Tools Used:</small>
+          <ul>
+            {item.list.map((list, index) => (
+              <li key={index}>{list}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="btns">
         <a href={item.code} target="_blank">
-          <BsGit /> <span>Code</span>
+          <BsGit />
+          <span>Code</span>
         </a>
-        <a href={item.live}>
-          <TbWorldUpload /> <span>Live</span>
+        <a href={item.live} target="_blank">
+          <TbWorldUpload />
+          <span>Live</span>
         </a>
-        <a href={item.video}>
+        <a href={item.video} target="_blank">
           <BsCameraVideo />
-          <span> Video</span>
+          <span>Video</span>
         </a>
       </div>
     </div>

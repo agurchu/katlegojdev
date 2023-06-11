@@ -31,7 +31,8 @@ html {
 
 :root {
   --primary: #00e9aa;
-  --secondary: rgb(235, 255, 250);
+  --secondary: rgb(217, 236, 232);
+  --accent: #090085;
   --dark: #404040;
   --white: #fff;
   --color-error: red;
