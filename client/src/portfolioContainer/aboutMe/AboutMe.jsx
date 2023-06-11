@@ -4,6 +4,7 @@ import kat_graduate from "../../assets/kat-graduate.png";
 import webdev from "../../assets/webdevicon.png";
 import "./aboutMe.css";
 import { Link } from "react-scroll";
+import DownloadPDF from "../../components/DownloadPDF";
 
 export default function AboutMe() {
   return (
@@ -55,7 +56,7 @@ export default function AboutMe() {
             >
               Hire Me
             </Link>
-            <button className="button button-secondary">Get Resume</button>
+            <DownloadPDF />
           </div>
         </div>
       </div>
