@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Profile from "./portfolioContainer/home/Profile";
 import NavBar from "./portfolioContainer/navbar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,22 +10,41 @@ import AboutMe from "./portfolioContainer/aboutMe/AboutMe";
 import Services from "./portfolioContainer/services/Services";
 import Projects from "./portfolioContainer/projects/Projects";
 import Featured from "./portfolioContainer/featured/Featured";
-{
-  /* 
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
 
-<i class="bx bx-up-arrow-alt"></i>
-<i class="bx bxs-phone"></i>
-<i class="bx bx-envelope"></i>
-<i class="bx bxl-html5"></i>
-<i class="bx bxl-css3"></i>
-<i class="bx bxs-user"></i> */
-}
 axios.defaults.baseURL = "http://localhost:8000";
+
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 200) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <NavBar />
       <main>
+        <BsFillArrowUpSquareFill
+          size={28}
+          className={`scroll-to-top-button ${isVisible ? "visible" : ""}`}
+          onClick={scrollToTop}
+        />
+
         <Profile />
         <AboutMe />
         <Services />

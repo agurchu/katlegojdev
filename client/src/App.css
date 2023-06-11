@@ -1,3 +1,20 @@
+.scroll-to-top-button {
+  position: fixed;
+  color: var(--primary);
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.4s ease;
+  transform: translateY(200%);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .contactMe__heading {
   color: var(--dark);
   max-width: 340px;
