@@ -25,11 +25,13 @@ function App() {
   return (
     <>
       <NavBar />
-      <Profile />
-      <AboutMe />
-      <Services />
-      <Projects />
-      <ContactMe />
+      <main>
+        <Profile />
+        <AboutMe />
+        <Services />
+        <Projects />
+        <ContactMe />
+      </main>
       <Featured />
     </>
   );
