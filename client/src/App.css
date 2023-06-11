@@ -6,6 +6,7 @@
   z-index: 1000;
   cursor: pointer;
   opacity: 0;
+  box-shadow: 0 0 10px #00000040;
   transition: transform 0.3s ease, opacity 0.4s ease;
   transform: translateY(200%);
 }
@@ -65,7 +66,7 @@
 }
 .bg_webicon2 {
   position: absolute;
-  bottom: -50%;
+  bottom: -70%;
   transform: translateY(-50%);
   right: 0;
   opacity: 0.1;

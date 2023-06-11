@@ -2,8 +2,8 @@ import React from "react";
 import SectionHeading from "../../components/SectionHeading";
 import kat_graduate from "../../assets/kat-graduate.png";
 import webdev from "../../assets/webdevicon.png";
-
 import "./aboutMe.css";
+import { Link } from "react-scroll";
 
 export default function AboutMe() {
   return (
@@ -47,7 +47,14 @@ export default function AboutMe() {
             </ul>
           </div>
           <div className="btns">
-            <button className="button button-primary">Hire Me</button>
+            <Link
+              spy={true}
+              activeClass="active"
+              to={"contact"}
+              className="button button-primary"
+            >
+              Hire Me
+            </Link>
             <button className="button button-secondary">Get Resume</button>
           </div>
         </div>

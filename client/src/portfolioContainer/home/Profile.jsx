@@ -2,6 +2,7 @@ import "./Profile.css";
 import Typical from "react-typical";
 import Footer from "./footer/footer";
 import webdev from "../../assets/websearch.png";
+import { Link } from "react-scroll";
 
 export default function Profile() {
   const typeAnimation = () => {
@@ -61,8 +62,16 @@ export default function Profile() {
                 </span>
               </span>
             </div>
+
             <div className="profile__options">
-              <button className="button button-primary">Hire Me</button>
+              <Link
+                spy={true}
+                activeClass="active"
+                to={"contact"}
+                className=" button button-primary"
+              >
+                Hire Me
+              </Link>
             </div>
           </div>
           <div className="profile__image">

@@ -83,8 +83,8 @@ const NavItem = ({ navMobile }) => {
         <Link
           spy={true}
           activeClass="active"
-          className="text-decoration-none"
           to={"contact"}
+          className="text-decoration-none"
         >
           Contact Me
         </Link>
