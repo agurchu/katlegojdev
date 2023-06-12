@@ -1,1 +1,1 @@
-export const VITE_SERVER_URL = "http://localhost:8000";
+export const VITE_SERVER_URL = "https://katlegojdev-api.onrender.com";
