@@ -7,7 +7,7 @@
 }
 
 .form__div {
-  height: 450px;
+  min-height: 450px;
   border-radius: var(--rounded-01);
   position: relative;
   width: 100%;
@@ -42,6 +42,10 @@
   text-align: left;
   margin-bottom: 5px;
 }
+.form__div form input::placeholder,
+.form__div form textarea::placeholder {
+  color: rgb(176, 202, 184);
+}
 
 .form__div form input,
 .form__div form textarea {
@@ -65,11 +69,15 @@
   min-height: 100px;
 }
 
+.form__div form div {
+  width: 100%;
+  display: flex;
+}
+
 .form__div form button {
   padding: 2px 20px;
   border: 2px solid transparent;
-  position: absolute;
-  bottom: 10px;
+
   background: var(--primary);
   color: var(--dark);
   border-radius: var(--rounded-01);
@@ -131,7 +139,6 @@
   }
 
   .form__div form {
-    height: 400px;
     margin-top: 20px;
   }
   .form__div form textarea {

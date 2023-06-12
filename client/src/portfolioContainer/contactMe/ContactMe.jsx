@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiMailSendLine } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 import axios from "axios";
 import "./contactMe.css";
 import SectionHeading from "../../components/SectionHeading";
 import webdevvector from "../../assets/webdevvector.png";
+import {
+  validateEmail,
+  validateFullName,
+  validateMessage,
+} from "../../components/Validation";
+import InlineError from "../../components/InlineError";
 
 export default function ContactMe() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [nameError, setNameError] = useState();
+  const [messageError, setMessageError] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  useEffect(() => {
+    // *************Validation
+    validateEmail({ email, setEmailError });
+    validateMessage({ message, setMessageError });
+    validateFullName({ name, setNameError });
+  }, [email, message, name]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,32 +69,41 @@ export default function ContactMe() {
           </div>
         </div>
         <form onSubmit={handleSubmit}>
+          {/* Fullname */}
           <label className="!block" htmlFor="name">
-            Name:
+            Full Name:
           </label>
           <input
             type="text"
-            id="name"
+            placeholder="Katlego Mtimane"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
+          {nameError && <InlineError error={nameError} />}
+          {/* email */}
           <label htmlFor="email">Email:</label>
           <input
             type="email"
-            id="email"
+            placeholder="example@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          {emailError && <InlineError error={emailError} />}
+          {/* message */}
           <label htmlFor="message">Message:</label>
           <textarea
-            id="message"
+            placeholder="How can I assist you?"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
           />
-          <button type="submit">Send</button>
+          {messageError && <InlineError error={messageError} />}
+          {/* Submit */}
+          <div>
+            <button type="submit">Send</button>
+          </div>
         </form>
       </div>
       <div className="bg_webicon">
