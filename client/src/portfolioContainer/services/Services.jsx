@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./services.css";
 import SectionHeading from "../../components/SectionHeading";
-import ServiceBadge from "../../components/serviceBadge";
+import ServiceBadge from "../../components/ServiceBadge";
 import { ServiceData } from "../../data/ServiceData";
 
 export default function Services() {
