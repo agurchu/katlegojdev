@@ -7,7 +7,7 @@ const { config } = require("dotenv");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://calm-belekoy-0b5f03.netlify.app"],
     credentials: true,
     methods: ["POST"],
   })
