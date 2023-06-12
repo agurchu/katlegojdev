@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const { emailSender } = require("./emailService");
 const cors = require("cors");
-const config = require("./config");
+const { config } = require("dotenv");
 
 app.use(express.json());
 app.use(
@@ -11,10 +11,11 @@ app.use(
     credentials: true,
   })
 );
-const port = process.env.PORT || 8000;
+
+const port = 8000;
 
 // send api
-app.post("/send", async (req, res) => {
+app.post("/api/send", async (req, res) => {
   try {
     const { name, email, message } = req.body;
     emailSender({ name, email, message });

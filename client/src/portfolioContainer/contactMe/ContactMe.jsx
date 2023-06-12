@@ -12,7 +12,7 @@ import {
 } from "../../components/Validation";
 import InlineError from "../../components/InlineError";
 import { toast } from "react-toastify";
-const SERVER_URL = import.meta.env.SERVER_URL;
+import { VITE_SERVER_URL } from "../../server";
 
 export default function ContactMe() {
   const [name, setName] = useState("");
@@ -38,7 +38,7 @@ export default function ContactMe() {
       const formData = { name, email, message };
 
       try {
-        const res = await axios.post(`${SERVER_URL}/send`, formData);
+        const res = await axios.post(`${VITE_SERVER_URL}/send`, formData);
 
         // Clear form fields
         if (res) {
