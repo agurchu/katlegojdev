@@ -5,7 +5,7 @@ export const ProjectData = [
   {
     image: agurchu,
     title: " Media Production",
-    body: "This is my first project and took me months. It  presented challenges in seamlessly integrating multimedia elements, and creating an intuitive user interface to showcase the client's portfolio. But I promised to remake it with React Js for better interaction.",
+    body: "This is my first project and took me months. It  presented challenges in seamlessly integrating multimedia elements, and creating an intuitive user interface to showcase the business's portfolio. But I promised to remake it with React Js for better interaction.",
     list: ["CSS", " HTML", "SwiperJS", "JavaScript", "Adobe Photoshop"],
     code: "https://github.com/agurchu/agurchu-production-website",
     live: "https://agurchu.github.io/agurchu-production-website/",

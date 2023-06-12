@@ -7,15 +7,16 @@ const { config } = require("dotenv");
 app.use(express.json());
 app.use(
   cors({
-    origin: config.CLIENT_URL,
+    origin: ["http://localhost:5173"],
     credentials: true,
+    methods: ["POST"],
   })
 );
 
 const port = 8000;
 
 // send api
-app.post("/api/send", async (req, res) => {
+app.post("/send", async (req, res) => {
   try {
     const { name, email, message } = req.body;
     emailSender({ name, email, message });

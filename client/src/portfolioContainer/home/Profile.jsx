@@ -49,7 +49,7 @@ export default function Profile() {
                 >
                   <i className="bx bxl-linkedin"></i>
                 </a>
-                <a target="_blank" href="#">
+                <a target="_blank" href="https://www.instagram.com/agurchu">
                   <i className="bx bxl-instagram"></i>
                 </a>
               </div>

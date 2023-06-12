@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeading from "../../components/SectionHeading";
-import kat_graduate from "../../assets/kat-graduate.png";
+import kat_graduate from "../../assets/kat-graduate.webp";
 import webdev from "../../assets/webdevicon.png";
 import "./aboutMe.css";
 import { Link } from "react-scroll";

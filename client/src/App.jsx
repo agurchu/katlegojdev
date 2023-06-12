@@ -14,6 +14,8 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+axios.defaults.withCredentials = true;
+
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
