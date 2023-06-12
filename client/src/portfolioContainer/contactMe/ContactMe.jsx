@@ -12,7 +12,7 @@ import {
 } from "../../components/Validation";
 import InlineError from "../../components/InlineError";
 import { toast } from "react-toastify";
-import { SERVER_URL } from "../../server";
+const SERVER_URL = import.meta.env.SERVER_URL;
 
 export default function ContactMe() {
   const [name, setName] = useState("");
