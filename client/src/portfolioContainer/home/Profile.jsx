@@ -34,13 +34,19 @@ export default function Profile() {
           <div className="profile__details">
             <div className="cols">
               <div className="cols__icon">
-                <a target="_blank" href="#">
+                <a target="_blank" href="https://github.com/agurchu">
                   <i className="bx bxl-github"></i>
                 </a>
-                <a target="_blank" href="#">
-                  <i className="bx bxl-facebook-circle"></i>
+                <a
+                  target="_blank"
+                  href="https://studio.youtube.com/channel/UCB5aCwD9eXi4BH0H-m_vHbw"
+                >
+                  <i className="bx bxl-youtube"></i>
                 </a>
-                <a target="_blank" href="#">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/katlego-j-mtimane-a1538822b/"
+                >
                   <i className="bx bxl-linkedin"></i>
                 </a>
                 <a target="_blank" href="#">
