@@ -11,8 +11,8 @@ import Services from "./portfolioContainer/services/Services";
 import Projects from "./portfolioContainer/projects/Projects";
 import Featured from "./portfolioContainer/featured/Featured";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
-
-axios.defaults.baseURL = "http://localhost:8000";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,6 +52,18 @@ function App() {
         <ContactMe />
       </main>
       <Featured />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }

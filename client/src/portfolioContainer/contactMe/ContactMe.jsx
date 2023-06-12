@@ -11,14 +11,18 @@ import {
   validateMessage,
 } from "../../components/Validation";
 import InlineError from "../../components/InlineError";
+import { toast } from "react-toastify";
+import { SERVER_URL } from "../../server";
 
 export default function ContactMe() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState();
-  const [messageError, setMessageError] = useState("");
-  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState();
+  const [emailError, setEmailError] = useState();
+  const [buttonLoading, setButtonLoading] = useState(false);
+  const [send, setSend] = useState();
 
   useEffect(() => {
     // *************Validation
@@ -29,22 +33,28 @@ export default function ContactMe() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setButtonLoading(true);
+    if (!nameError && !emailError && !messageError) {
+      const formData = { name, email, message };
 
-    const formData = { name, email, message };
+      try {
+        const res = await axios.post(`${SERVER_URL}/send`, formData);
 
-    try {
-      await axios.post("/send-email", formData);
-      alert(
-        "Message sent successfully. Thank you, we will get back to you soon!"
-      );
-      // Clear form fields
-      setName("");
-      setEmail("");
-      setMessage("");
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Oops! Something went wrong. Please try again later.");
+        // Clear form fields
+        if (res) {
+          toast.success(
+            "Message sent successfully. Thank you, we will get back to you soon!"
+          );
+          setName("");
+          setEmail("");
+          setMessage("");
+        }
+      } catch (error) {
+        console.error("Error sending message:", error);
+        toast.error(error.response.data.message);
+      }
     }
+    setButtonLoading(false);
   };
 
   return (
@@ -102,7 +112,10 @@ export default function ContactMe() {
           {messageError && <InlineError error={messageError} />}
           {/* Submit */}
           <div>
-            <button type="submit">Send</button>
+            <button disabled={buttonLoading && true} type="submit">
+              {" "}
+              {buttonLoading ? "Loading.." : "Send"}
+            </button>
           </div>
         </form>
       </div>
