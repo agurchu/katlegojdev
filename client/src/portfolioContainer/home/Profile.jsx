@@ -1,6 +1,6 @@
 import "./Profile.css";
 import Typical from "react-typical";
-import Footer from "./footer/footer";
+import Footer from "./footer/Footer";
 import webdev from "../../assets/websearch.png";
 import { Link } from "react-scroll";
 
