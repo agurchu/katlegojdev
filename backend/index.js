@@ -7,7 +7,7 @@ const { config } = require("dotenv");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://calm-belekoy-0b5f03.netlify.app/"],
+    origin: "https://cerulean-maamoul-3acb1f.netlify.app",
     credentials: true,
     methods: ["POST"],
   })
