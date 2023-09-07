@@ -145,3 +145,10 @@
     min-height: 140px;
   }
 }
+
+@media (max-width: 500px) {
+  .contactMe {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

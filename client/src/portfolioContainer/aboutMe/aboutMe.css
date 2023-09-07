@@ -99,3 +99,9 @@
     width: 100%;
   }
 }
+@media (max-width: 500px) {
+  .about {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

@@ -1,7 +1,27 @@
 import agurchu from "../assets/logo/Agurchu_logo.png";
 import katlegojdev from "../assets/logo/kj_dev_long_logo_dark.png";
+import katShop from "../assets/logo/kj_dev_logo.png";
 
 export const ProjectData = [
+  {
+    image: katShop,
+    title: "Kat Shop (E-commerce)",
+    body: "This is a solo endeavor aimed at creating a versatile and user-friendly platform for buying and selling products online. Crafted with the MERN stack, this project allows me to showcase my web development skills while delivering a functional e-commerce site.",
+    list: [
+      "MongoDB",
+      " Express.js",
+      "React",
+      "JavaScript",
+      "Node.js",
+      "tailwindcss",
+      "redux",
+      "react-icons",
+      "material-ui",
+    ],
+    code: "https://github.com/agurchu/kat-shopping.git",
+    live: "https://precious-rugelach-9c0d15.netlify.app",
+    video: "https://youtu.be/79XDJlW1_j8",
+  },
   {
     image: agurchu,
     title: " Media Production",

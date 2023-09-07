@@ -8,6 +8,10 @@
   height: 400px;
   color: var(--white);
 }
+.projects {
+  width: 100vw;
+  overflow-x: hidden;
+}
 
 .projects_heading p {
   max-width: 600px;
@@ -28,4 +32,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
   gap: 20px;
+}
+@media (max-width: 500px) {
+  .projects_grid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }

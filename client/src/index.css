@@ -24,6 +24,7 @@ body {
   text-align: center;
   background: var(--white);
   color: var(--white);
+  overflow-x: ;
 }
 html {
   font-size: 62.5%;

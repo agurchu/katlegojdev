@@ -2,6 +2,7 @@
   color: var(--dark);
   padding-top: 70px !important;
   margin-bottom: 40px;
+  width: 100vw;
 }
 
 .services .badges {
@@ -9,4 +10,11 @@
   width: 100%;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+@media (max-width: 500px) {
+  .services {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
