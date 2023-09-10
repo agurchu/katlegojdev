@@ -2,7 +2,7 @@
   position: fixed;
   color: var(--primary);
   bottom: 20px;
-  right: 20px;
+  right: 40px;
   z-index: 1000;
   cursor: pointer;
   opacity: 0;
@@ -62,7 +62,7 @@
   left: 0;
   transform: translateY(-50%);
   opacity: 0.1;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
 }
 .bg_webicon2 {
@@ -70,11 +70,13 @@
   bottom: -70%;
   transform: translateY(-50%);
   right: 0;
+  width: 100%;
   opacity: 0.1;
   z-index: 0;
 }
 
-.bg_webicon img {
+.bg_webicon img,
+.bg_webicon2 img {
   object-fit: cover;
   width: 100%;
 }
