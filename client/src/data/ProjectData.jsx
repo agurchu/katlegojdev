@@ -29,7 +29,7 @@ export const ProjectData = [
     list: ["CSS", " HTML", "SwiperJS", "JavaScript", "Adobe Photoshop"],
     code: "https://github.com/agurchu/agurchu-production-website",
     live: "https://agurchu.github.io/agurchu-production-website/",
-    video: "https://kiehiouhi",
+    video: "https://youtu.be/OmPf4DusNNo",
   },
   {
     image: katlegojdev,
@@ -45,7 +45,7 @@ export const ProjectData = [
     ],
     code: "https://github.com/agurchu/Responsive-RS-Website.git",
     live: "https://agurchu.github.io/Responsive-RS-Website/",
-    video: "https://kiehiouhi",
+    video: "https://youtu.be/2ffNrixG34E",
   },
   {
     image: katlegojdev,
@@ -54,6 +54,6 @@ export const ProjectData = [
     list: ["CSS", " HTML", "SwiperJS", "JavaScript", "Adobe Photoshop"],
     code: "https://github.com/agurchu/web-dev-website/",
     live: "https://agurchu.github.io/web-dev-website/",
-    video: "https://kiehiouhi",
+    video: "https://youtu.be/9PxSvWwSaXA",
   },
 ];
