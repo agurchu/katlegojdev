@@ -62,7 +62,9 @@ export default function Profile() {
             </div>
             <div className="profile__details-role">
               <span className="primary__text">
-                <h1>{typeAnimation()}</h1>
+                <div>
+                  <h1>{typeAnimation()}</h1>
+                </div>
                 <span className="profile-role_tagline">
                   Transforming ideas of applications into stunning realities.
                 </span>

@@ -70,6 +70,10 @@
   color: var(--primary);
 }
 
+.primary__text div {
+  height: 100px;
+}
+
 .profile-role_tagline {
   font-size: 2rem;
   margin: 5px 0 0 0;

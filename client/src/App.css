@@ -67,7 +67,7 @@
 }
 .bg_webicon2 {
   position: absolute;
-  bottom: -70%;
+  bottom: -1150px;
   transform: translateY(-50%);
   right: 0;
   width: 100%;
@@ -77,8 +77,8 @@
 
 .bg_webicon img,
 .bg_webicon2 img {
-  object-fit: cover;
-  width: 100%;
+  object-fit: contain;
+  max-width: 80%;
 }
 .service_box {
   box-shadow: 0 0 5px #0000001e;
@@ -244,4 +244,9 @@
 
   padding: 5px 10px;
   border-radius: var(--rounded-01);
+}
+@media screen and (max-width: 868px) {
+  .bg_webicon2 {
+    bottom: -750px;
+  }
 }
