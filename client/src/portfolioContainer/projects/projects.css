@@ -1,10 +1,13 @@
 .projects_heading {
-  background: var(--dark);
+  background: url(../../assets/background/kat-landscape.jpg);
   width: 100%;
   display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   flex-direction: column;
   align-items: center;
-
+  position: relative;
   height: 400px;
   color: var(--white);
 }
@@ -17,7 +20,7 @@
   max-width: 600px;
   margin-top: 10px;
   padding: 0 30px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 0.7px;
 }
 
@@ -36,6 +39,10 @@
 @media (max-width: 500px) {
   .projects_grid {
     padding-left: 30px;
+
     padding-right: 30px;
+  }
+  .projects_heading p {
+    font-size: 1rem;
   }
 }
