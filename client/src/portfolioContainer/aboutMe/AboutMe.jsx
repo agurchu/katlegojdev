@@ -37,14 +37,29 @@ export default function AboutMe() {
             <h2>Hightlights</h2>
             <ul>
               <h3>Web Development Skills</h3>
-              <li>React JS, JavaScript, Node JS, HTML, CSS, SEO, </li>
-              <li>Bootstrap, Tailwind, Express JS, Git, GitHub, Redux, </li>
-              <li>MongoDB, Visual Studio Code, Adobe Photoshop, Material UI</li>
+              <li>
+                <div />
+                React JS, JavaScript, Node JS, HTML, CSS, SEO,{" "}
+              </li>
+              <li>
+                <div />
+                Bootstrap, Tailwind, Express JS, Git, GitHub, Redux,{" "}
+              </li>
+              <li>
+                <div />
+                MongoDB, Visual Studio Code, Adobe Photoshop, Material UI
+              </li>
             </ul>
             <ul>
               <h3>Additional Skills</h3>
-              <li>Adobe Photoshop, Adobe Premier Pro, Adobe After Effects </li>
-              <li>MS Office, music production, Graphic Design </li>
+              <li>
+                <div />
+                Adobe Photoshop, Adobe Premier Pro, Adobe After Effects{" "}
+              </li>
+              <li>
+                <div />
+                MS Office, music production, Graphic Design{" "}
+              </li>
             </ul>
           </div>
           <div className="btns">

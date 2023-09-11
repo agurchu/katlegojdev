@@ -58,19 +58,18 @@
 
 .skils ul li {
   position: relative;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
-.skils ul li::before {
-  content: "";
+.skils ul li div {
   background: var(--primary);
   width: 5px;
   height: 5px;
-  position: absolute;
-  border-radius: var(--rounded-01);
-  top: 50%;
+  display: inline-flex;
   transform: translateY(-50%);
-  left: -10px;
+  margin-right: 5px;
+  margin-left: -10px;
+  border-radius: var(--rounded-01);
 }
 
 .btns {
