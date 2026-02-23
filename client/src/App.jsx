@@ -1,73 +1,53 @@
-import "./App.css";
-import React, { useEffect, useState } from "react";
-import Profile from "./portfolioContainer/home/Profile";
-import NavBar from "./portfolioContainer/navbar/NavBar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import ContactMe from "./portfolioContainer/contactMe/ContactMe";
-import { Route, Routes } from "react-router-dom";
-import axios from "axios";
-import AboutMe from "./portfolioContainer/aboutMe/AboutMe";
-import Services from "./portfolioContainer/services/Services";
-import Projects from "./portfolioContainer/projects/Projects";
-import Featured from "./portfolioContainer/featured/Featured";
-import { BsFillArrowUpSquareFill } from "react-icons/bs";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Github, Linkedin, Mail } from "lucide-react";
+import About from "./components/sections/About";
+import Education from "./components/sections/Education";
+import Experience from "./components/sections/Experience";
+import Hero from "./components/sections/Hero";
+import Projects from "./components/sections/Projects";
+import Skills from "./components/sections/Skills";
 
-axios.defaults.withCredentials = true;
-
-function App() {
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 200) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-    window.addEventListener("scroll", toggleVisibility);
-
-    return () => {
-      window.removeEventListener("scroll", toggleVisibility);
-    };
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+export default function Portfolio() {
   return (
-    <>
-      <NavBar />
-      <main>
-        <BsFillArrowUpSquareFill
-          size={28}
-          className={`scroll-to-top-button ${isVisible ? "visible" : ""}`}
-          onClick={scrollToTop}
-        />
-
-        <Profile />
-        <AboutMe />
-        <Services />
+    <div className="min-h-screen bg-slate-950 text-white px-5 sm:px-10 md:px-20 py-10 md:py-16">
+      <div className="max-w-7xl mx-auto">
+        <Hero />
+        <About />
+        <Skills />
         <Projects />
-        <ContactMe />
-      </main>
-      <Featured />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </>
+        <Experience />
+        <Education />
+
+        <footer className="border-t border-slate-800 pt-12 mt-20 text-center text-slate-500">
+          <p>
+            © {new Date().getFullYear()} Katlego Mtimane • Software Engineer •
+            South Africa
+          </p>
+          <div className="flex justify-center gap-8 mt-6 text-slate-400">
+            <a
+              href="https://github.com/katlegojdev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              <Github className="h-6 w-6" />
+            </a>
+            <a
+              href="https://linkedin.com/in/your-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a
+              href="mailto:katlegoj.dev@gmail.com"
+              className="hover:text-white transition-colors"
+            >
+              <Mail className="h-6 w-6" />
+            </a>
+          </div>
+        </footer>
+      </div>
+    </div>
   );
 }
-
-export default App;

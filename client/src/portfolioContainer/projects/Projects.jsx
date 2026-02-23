@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./projects.css";
 import { ProjectData } from "../../data/ProjectData";
 import ProjectBadge from "../../components/ProjectBadge";
 
 export default function Projects() {
+  const [filter, setFilter] = useState("All");
+
+  const handleFilterChange = (category) => {
+    setFilter(category);
+  };
   return (
     <section className="projects" id="projects ">
       <div className="projects_heading ">

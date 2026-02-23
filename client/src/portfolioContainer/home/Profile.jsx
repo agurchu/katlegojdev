@@ -1,5 +1,5 @@
 import "./Profile.css";
-import Typical from "react-typical";
+import { TypeAnimation } from 'react-type-animation'
 import Footer from "./footer/Footer";
 import webdev from "../../assets/websearch.png";
 import { Link } from "react-scroll";
@@ -7,20 +7,19 @@ import { Link } from "react-scroll";
 export default function Profile() {
   const typeAnimation = () => {
     return (
-      <Typical
-        loop={Infinity}
-        steps={[
-          "Frontend Developer",
+      <TypeAnimation
+        sequence={[
+          "Software Engineer",
           2000,
-          "ReactJS Developer",
+          "React Developer",
           2000,
-          "MERN Stack Developer",
+          "Java & Python Developer",
           2000,
           "Graphic Designer",
           2000,
-          "Video Editor",
+          "System Integration Specialist",
           2000,
-          "Biomedical Scientist",
+          "Cloud & Azure Certified",
           2000,
         ]}
       />
@@ -57,7 +56,7 @@ export default function Profile() {
             <div className="profile__details-name">
               <span className="primary__text">
                 Hello! I'm{" "}
-                <span className="highlighted-text">Katlego Mtimane</span>{" "}
+                <span className="highlighted-text">Katlego J. Mtimane</span>{" "}
               </span>
             </div>
             <div className="profile__details-role">
