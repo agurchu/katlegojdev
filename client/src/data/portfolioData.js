@@ -1,32 +1,38 @@
+// src/data/portfolioData.js
 export const projects = [
   {
-    title: "Real Estate Web Application",
-    category: "Frontend",
+    title: "WeThinkCode Toy Robot (Greenfield & Brownfield)",
+    category: "Backend",
     description:
-      "Developed a responsive real estate platform with modern UI/UX and backend integration. Improved page load performance and optimized component reusability.",
-    impact: "Improved UI performance and reduced redundant components by 35%.",
-    tech: "React, Redux, Tailwind, REST API",
-    github: "https://github.com/yourusername/real-estate-app",
-    live: "https://your-realestate-live-link.com",
+      "Developed and extended a Java-based robot simulation system, implementing command parsing, state management, and enhancements on an existing codebase.",
+    impact:
+      "Improved code maintainability and feature extensibility through refactoring and modular design.",
+    tech: ["Java", "OOP", "Clean Code"],
+    github: "https://github.com/katlegojdev/toy-robot", // update your real username
+    live: "#",
   },
   {
     title: "Enterprise REST API – Spring Boot",
     category: "Backend",
     description:
       "Designed and developed a layered RESTful API using Spring Boot with MySQL integration and proper exception handling.",
-    impact: "Reduced API response time by 30% through query optimization and indexing.",
-    tech: "Java, Spring Boot, JPA, MySQL",
+    impact:
+      "Reduced API response time by 30% through query optimization and indexing.",
+    tech: ["Java", "Spring Boot", "JPA", "MySQL"],
     github: "https://github.com/yourusername/springboot-api",
     live: "#",
   },
+  // ... add ALL your other projects here in the same format
+  // Example for the last one:
   {
-    title: "System Integration Project",
-    category: "Integration",
+    title: "Azure Cloud Deployment Project",
+    category: "Cloud",
     description:
-      "Integrated multiple backend services through REST APIs ensuring reliable data flow and JSON processing.",
-    impact: "Improved service communication reliability and reduced integration errors by 40%.",
-    tech: "Java, REST APIs, JSON, Postman",
-    github: "https://github.com/yourusername/system-integration-project",
+      "Deployed and configured applications on Microsoft Azure including networking and virtual environments.",
+    impact:
+      "Optimized deployment pipeline reducing environment setup time by 50%.",
+    tech: ["Microsoft Azure", "Virtual Networks", "Cloud Architecture"],
+    github: "https://github.com/katlegojdev/azure-project",
     live: "#",
   },
   {
@@ -34,15 +40,140 @@ export const projects = [
     category: "Cloud",
     description:
       "Deployed and configured applications on Microsoft Azure including networking and virtual environments.",
-    impact: "Optimized deployment pipeline reducing environment setup time by 50%.",
-    tech: "Microsoft Azure, Virtual Networks, Cloud Architecture",
+    impact:
+      "Optimized deployment pipeline reducing environment setup time by 50%.",
+    tech: ["Microsoft Azure", "Virtual Networks", "Cloud Architecture"],
     github: "https://github.com/yourusername/azure-project",
     live: "#",
   },
+
+  {
+    title: "System Integration Project",
+    category: "Integration",
+    description:
+      "Integrated multiple backend services through REST APIs ensuring reliable data flow and JSON processing.",
+    impact:
+      "Improved service communication reliability and reduced integration errors by 40%.",
+    tech: ["Java", "REST APIs", "JSON", "Postman"],
+    github: "https://github.com/yourusername/system-integration-project",
+    live: "#",
+  },
+  {
+    title: "Kat Shop (E-commerce)",
+    category: "Full-Stack",
+    description:
+      "Created a versatile and user-friendly platform for buying and selling products online. Crafted with the MERN stack, this project allows me to showcase my web development skills while delivering a functional e-commerce site.",
+    impact:
+      "Implemented a full-stack e-commerce application with user authentication, product management, and a responsive design, demonstrating proficiency in the MERN stack.",
+    tech: [
+      "Express.js"," React (Vite)","Node.js","MongoDB","REST API","Axios",
+      "Tailwind CSS",
+      "Redux",
+    ],
+    github: "https://github.com/agurchu/kat-shopping.git",
+    live: "https://precious-rugelach-9c0d15.netlify.app",
+  },
+  {
+    title: "Baledi Daycare Website",
+    category: "Full-Stack",
+    description:
+      "Designed and developed a professional daycare website with a responsive frontend and a secure backend API for handling contact form submissions. The platform was built to provide parents with essential information while integrating a backend system for data management and future scalability.",
+    impact:
+      "Implemented a full-stack web application using React and Spring Boot with MySQL integration. Configured hosting, SSL, domain setup, and database connectivity, demonstrating practical experience in deployment, backend integration, and production-level troubleshooting.",
+    tech: [
+      "React (Vite)",
+      "Spring Boot",
+      "MySQL",
+      "HostAfrica Hosting",
+      "REST API",
+      "Axios",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/agurchu/baledi-daycare.git",
+    live: "https://baledidaycare.co.za",
+  },
 ];
 
-export const CORE_FOCUS = [
-  { icon: "Code", text: "Frontend Engineering (React, Tailwind, Redux)" },
-  { icon: "Server", text: "System Integration (REST APIs, Microservices, Backend Communication)" },
-  { icon: "Cloud", text: "Cloud Engineering (Microsoft Azure)" },
+export const skills = {
+  programming: [
+    "Java (OOP, Spring Boot)",
+    "Python",
+    "JavaScript",
+    "HTML",
+    "CSS",
+  ],
+  frameworks: ["React", "Redux", "Tailwind CSS", "Spring Boot", "Git", "Maven"],
+  cloud: [
+    "Microsoft Azure",
+    "Azure Virtual Desktop",
+    "Azure Networking",
+    "Cloud Deployment",
+  ],
+  integration: ["REST APIs", "JSON", "Postman", "System Integration"],
+  Databases: ["MySQL", "MongoDB", "SQLite", "PostgreSQL", "SQL Optimization"],
+  Tools: [
+    "Git",
+    "Maven",
+    "Postman",
+    "Docker",
+    "Azure CLI",
+    "Agile",
+    "Unit Testing Fundamentals",
+  ],
+  soft: [
+    "Problem Solving",
+    "Team Collaboration",
+    "Effective Communication",
+    "Adaptability",
+    "conflict resolution",
+  ],
+};
+
+export const experience = [
+  {
+    title: "Cloud Engineer Intern - NjinjiCom",
+    period: "May 2024 - Nov 2024",
+    description:
+      "Supported deployment and configuration of cloud infrastructure on Microsoft Azure. Assisted in networking setup, virtual environments, and troubleshooting cloud systems.",
+  },
+  {
+    title: "Freelance Software Developer - Agurchu(self-Employed)",
+    period: "Jan 2023 - Present",
+    description:
+      "Designed and developed backend services using Java and Spring Boot. Built RESTful APIs integrated with MySQL databases. Implemented clean architecture principles to improve maintainability and scalability. Delivered full-stack solutions while maintaining backend performance standards.",
+  },
+
+  // ... add others
 ];
+
+export const education = [
+  {
+    institution: "WeThinkCode_",
+    degree: "Diploma of Education, Computer Science",
+    period: "Feb 2025 - May 2026",
+    skills:
+      "Python, Java, System Integration, Algorithms, Data Structures, +15 technical skills",
+  },
+  {
+    institution: "Mecer Inter-Ed",
+    degree: "Cloud Computing, Microsoft Azure Engineering",
+    period: "Nov 2023 - Apr 2024",
+    skills:
+      "Python, Java, System Integration, Algorithms, Data Structures, +15 technical skills",
+  },
+  {
+    institution: "University of Limpopo",
+    degree: "Bachelor of Science in Biomedical Sciences",
+    period: "Jan 2018 - Dec 2021",
+    skills:
+      "Python, Java, System Integration, Algorithms, Data Structures, +15 technical skills",
+  },
+  // ... others
+];
+
+export const socials = {
+  github: "https://github.com/katlegojdev",
+  linkedin: "https://linkedin.com/in/katlego-mtimane", // update real link
+  email: "katlegoj.dev@gmail.com",
+  phone: "+27 63 734 2965",
+};

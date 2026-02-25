@@ -1,53 +1,67 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import About from "./components/sections/About";
-import Education from "./components/sections/Education";
-import Experience from "./components/sections/Experience";
-import Hero from "./components/sections/Hero";
-import Projects from "./components/sections/Projects";
-import Skills from "./components/sections/Skills";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import ScrollProgress from "./components/ScrollProgress";
+import About from "./pages/About";
+import Education from "./pages/Education";
+import Experience from "./pages/Experience";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
 
-export default function Portfolio() {
+import { loadLinksPreset } from "@tsparticles/preset-links";
+import Particles from "@tsparticles/react"; // ← new import
+import { useCallback } from "react";
+
+export default function App() {
+  const particlesInit = useCallback(async (engine) => {
+    await loadLinksPreset(engine); // This should now succeed without checkVersion error
+  }, []);
   return (
-    <div className="min-h-screen bg-slate-950 text-white px-5 sm:px-10 md:px-20 py-10 md:py-16">
-      <div className="max-w-7xl mx-auto">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
+      <BrowserRouter>
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100">
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          preset: "links", // or full custom options
+          background: { color: { value: "transparent" } },
+          particles: {
+            number: { value: 40 },
+            color: { value: "#334155" },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#334155",
+              opacity: 0.4,
+            },
+            move: { enable: true, speed: 0.8 },
+          },
+          interactivity: {
+            events: { onhover: { enable: true, mode: "grab" } },
+          },
+          // Add more options as needed
+        }}
+        className="fixed inset-0 pointer-events-none z-0"
+      />
+      <ScrollProgress />
 
-        <footer className="border-t border-slate-800 pt-12 mt-20 text-center text-slate-500">
-          <p>
-            © {new Date().getFullYear()} Katlego Mtimane • Software Engineer •
-            South Africa
-          </p>
-          <div className="flex justify-center gap-8 mt-6 text-slate-400">
-            <a
-              href="https://github.com/katlegojdev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://linkedin.com/in/your-linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="mailto:katlegoj.dev@gmail.com"
-              className="hover:text-white transition-colors"
-            >
-              <Mail className="h-6 w-6" />
-            </a>
-          </div>
-        </footer>
-      </div>
+      <Navbar />
+      <main className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+       
+     
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+     
+      </main>
+      <Footer />
     </div>
+       </BrowserRouter>
   );
 }

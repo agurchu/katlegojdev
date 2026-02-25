@@ -1,53 +1,61 @@
-import { Button } from "../components/ui/button";
-import { Card, CardContent } from "../components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+// src/components/ProjectCard.jsx
+import { motion } from "framer-motion";
+import { Link } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, index }) {
   return (
-    <Card className="bg-slate-900 border-slate-800 hover:border-slate-600 transition-colors h-full">
-      <CardContent className="p-6 flex flex-col h-full">
-        <div className="flex-1">
-          <div className="flex justify-between items-start mb-3">
-            <h3 className="text-xl font-semibold text-white">
-              {project.title}
-            </h3>
-            <span className="text-xs px-3 py-1 bg-slate-800 rounded-full text-slate-300">
-              {project.category}
-            </span>
-          </div>
-
-          <p className="text-slate-400 mb-4">{project.description}</p>
-
-          <p className="text-green-400 text-sm font-medium mb-4">
-            Impact: {project.impact}
-          </p>
-
-          <p className="text-slate-500 text-sm mb-6">{project.tech}</p>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="group bg-slate-900/40 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/20"
+    >
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-semibold group-hover:text-blue-400 transition-colors">
+            {project.title}
+          </h3>
+          <span className="text-xs px-3 py-1 bg-slate-800 rounded-full text-slate-300">
+            {project.category}
+          </span>
         </div>
 
-        <div className="flex gap-3 mt-auto">
+        <p className="text-slate-400 mb-4 line-clamp-3">{project.description}</p>
+        <p className="text-sm italic text-slate-500 mb-6">{project.impact}</p>
+
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.tech.map((t) => (
+            <span key={t} className="text-xs px-3 py-1 bg-slate-800/70 rounded-full text-cyan-300">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-4">
           {project.github !== "#" && (
-            <Button variant="outline" size="sm" className="rounded-xl" asChild>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </a>
-            </Button>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition"
+            >
+              <FaGithub size={18} /> Code
+            </a>
           )}
           {project.live !== "#" && (
-            <Button size="sm" className="rounded-xl" asChild>
-              <a href={project.live} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live
-              </a>
-            </Button>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition"
+            >
+              <Link size={18} /> Live
+            </a>
           )}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </motion.div>
   );
 }

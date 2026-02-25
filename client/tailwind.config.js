@@ -1,20 +1,46 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx}",           // core – must have .jsx
+    "./src/**/**/*.{js,jsx}",        // nested folders safety
+    "./src/pages/**/*.{js,jsx}",
+    "./src/components/**/*.{js,jsx}",
+  ],
 
   theme: {
     fontFamily: {
-      Poppins: ["Poppins", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
-    colors: {
-      secondary: "#404040",
-      primary: "#00e9aa",
-    },
+
     extend: {
+      // Extend – do NOT override the full slate palette
+      colors: {
+        slate: {
+          950: '#020617',
+          900: '#0f172a',
+          800: '#1e293b',
+        },
+      },
+
+      backdropBlur: {
+        xs: "2px",
+      },
+
+      boxShadow: {
+        glass: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        "soft-neo": "8px 8px 16px #0f172a, -8px -8px 16px #1e293b",
+      },
+
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
+
       gridTemplateColumns: {
         footer: "minmax(300px, 350px) 1fr",
       },
     },
   },
+
   plugins: [],
-};
+}
