@@ -1,3 +1,5 @@
+const { Background } = require('@tsparticles/engine');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -17,10 +19,13 @@ module.exports = {
       // Extend – do NOT override the full slate palette
       colors: {
         slate: {
-          950: '#020617',
-          900: '#0f172a',
-          800: '#1e293b',
+          1: '#020617',
+          2: '#0f172a',
+          3: '#1e293b',
         },
+        primary: "#22d3ee",
+        secondary: "#60a5fa",
+        background: "#020617",
       },
 
       backdropBlur: {

@@ -15,7 +15,7 @@ export default function Projects() {
       : projects.filter((p) => p.category === filter);
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 max-w-6xl mx-auto">
       <SectionTitle>All Projects</SectionTitle>
 
       {/* Filter buttons */}
@@ -26,7 +26,7 @@ export default function Projects() {
             onClick={() => setFilter(cat)}
             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
               filter === cat
-                ? "bg-blue-600 text-white shadow-lg shadow-blue-900/30"
+                ? "bg-secondary text-white shadow-lg shadow-blue-900/30"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-blue-300"
             }`}
           >

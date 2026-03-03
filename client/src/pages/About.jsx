@@ -4,7 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 
 export default function About() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 max-w-6xl mx-auto">
       <SectionTitle>About Me</SectionTitle>
 
       <motion.div

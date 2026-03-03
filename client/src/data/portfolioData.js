@@ -66,7 +66,12 @@ export const projects = [
     impact:
       "Implemented a full-stack e-commerce application with user authentication, product management, and a responsive design, demonstrating proficiency in the MERN stack.",
     tech: [
-      "Express.js"," React (Vite)","Node.js","MongoDB","REST API","Axios",
+      "Express.js",
+      " React (Vite)",
+      "Node.js",
+      "MongoDB",
+      "REST API",
+      "Axios",
       "Tailwind CSS",
       "Redux",
     ],
@@ -131,13 +136,15 @@ export const skills = {
 
 export const experience = [
   {
-    title: "Cloud Engineer Intern - NjinjiCom",
+    company: "NjinjiCom",
+    role: "Cloud Engineer Intern - Microsoft Azure",
     period: "May 2024 - Nov 2024",
     description:
       "Supported deployment and configuration of cloud infrastructure on Microsoft Azure. Assisted in networking setup, virtual environments, and troubleshooting cloud systems.",
   },
   {
-    title: "Freelance Software Developer - Agurchu(self-Employed)",
+    company: "Agurchu(self-Employed)",
+    role: "Freelance Software Developer",
     period: "Jan 2023 - Present",
     description:
       "Designed and developed backend services using Java and Spring Boot. Built RESTful APIs integrated with MySQL databases. Implemented clean architecture principles to improve maintainability and scalability. Delivered full-stack solutions while maintaining backend performance standards.",

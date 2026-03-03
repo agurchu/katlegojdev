@@ -14,7 +14,7 @@ export default function ProjectCard({ project, index }) {
     >
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-semibold group-hover:text-blue-400 transition-colors">
+          <h3 className="text-xl font-semibold group-hover:text-secondary transition-colors">
             {project.title}
           </h3>
           <span className="text-xs px-3 py-1 bg-slate-800 rounded-full text-slate-300">
@@ -27,7 +27,7 @@ export default function ProjectCard({ project, index }) {
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tech.map((t) => (
-            <span key={t} className="text-xs px-3 py-1 bg-slate-800/70 rounded-full text-cyan-300">
+            <span key={t} className="text-xs px-3 py-1 bg-slate-800/70 rounded-full text-primary">
               {t}
             </span>
           ))}
@@ -39,7 +39,7 @@ export default function ProjectCard({ project, index }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition"
+              className="flex items-center gap-2 text-slate-300 hover:text-secondary transition"
             >
               <FaGithub size={18} /> Code
             </a>
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, index }) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition"
+              className="flex items-center gap-2 text-slate-300 hover:text-secondary transition"
             >
               <Link size={18} /> Live
             </a>

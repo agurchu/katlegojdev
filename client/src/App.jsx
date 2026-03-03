@@ -19,7 +19,7 @@ export default function App() {
   }, []);
   return (
       <BrowserRouter>
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-slate-1 to-slate-2 text-slate-100">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -47,7 +47,7 @@ export default function App() {
       <ScrollProgress />
 
       <Navbar />
-      <main className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <main className="pt-20 pb-16  sm:px-6  mx-auto">
        
      
         <Routes>

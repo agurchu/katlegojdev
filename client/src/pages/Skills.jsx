@@ -5,7 +5,7 @@ import SectionTitle from "../components/SectionTitle";
 
 export default function Skills() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 max-w-6xl mx-auto">
       <SectionTitle>Technical Skills</SectionTitle>
 
       <div className="grid md:grid-cols-3 gap-8">
