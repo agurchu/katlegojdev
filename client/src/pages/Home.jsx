@@ -1,10 +1,10 @@
-// src/pages/Home.jsx
 import { ExternalLink, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
-import { projects } from "../data/portfolioData";
+// import Services from "../components/Services";
+import { projects, socials } from "../data/portfolioData";
 import Experience from "./Experience";
-import Services from "../components/Services";
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 6); // show top 6 on home
@@ -45,15 +45,42 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-5">
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=katlegoj.dev@gmail.com"
-                    className="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-xl font-semibold text-white transition-all shadow-lg shadow-cyan-900/30 transform hover:scale-[1.02] active:scale-95"
-                  >
-                    <Mail size={20} />
-                    Let's talk
-                  </a>
-                  <div></div>
+         
+                  <div className="flex flex-col">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=katlegoj.dev@gmail.com"
+                      className="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-xl font-semibold text-white transition-all shadow-lg shadow-cyan-900/30 transform hover:scale-[1.02] active:scale-95"
+                    >
+                      <Mail size={20} />
+                      Let's talk
+                    </a>
+                    <div className="flex justify-center gap-8 mt-6 text-2xl">
+                      <a
+                        href={socials.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-400 transition"
+                      >
+                        <FaGithub />
+                      </a>
+                      <a
+                        href={socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-400 transition"
+                      >
+                        <FaLinkedin />
+                      </a>
+                      <a
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${socials.email}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-400 transition"
+                      >
+                        <Mail />
+                      </a>
+                 
+                  </div>
                 </div>
 
                 {/* Small tech badges */}
@@ -106,7 +133,7 @@ export default function Home() {
           <span className="mt-2">Scroll to explore</span>
         </div>
       </section>
-      <Services />
+      {/* <Services /> */}
       <Experience />
       {/* Featured Projects */}
       <section className="max-w-6xl mx-auto">

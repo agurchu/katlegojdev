@@ -9,7 +9,7 @@ export const projects = [
     impact:
       "Improved code maintainability and feature extensibility through refactoring and modular design.",
     tech: ["Java", "OOP", "Clean Code"],
-    github: "https://github.com/katlegojdev/toy-robot", // update your real username
+    github: "",
     live: "#",
   },
   {
@@ -20,11 +20,10 @@ export const projects = [
     impact:
       "Reduced API response time by 30% through query optimization and indexing.",
     tech: ["Java", "Spring Boot", "JPA", "MySQL"],
-    github: "https://github.com/yourusername/springboot-api",
+    github: "",
     live: "#",
   },
-  // ... add ALL your other projects here in the same format
-  // Example for the last one:
+
   {
     title: "Azure Cloud Deployment Project",
     category: "Cloud",
@@ -98,6 +97,27 @@ export const projects = [
     github: "https://github.com/agurchu/baledi-daycare.git",
     live: "https://baledidaycare.co.za",
   },
+  {
+    title: "Million Family Business",
+    category: "Full-Stack",
+    description:
+      "Developed a professional, user-friendly website for a registered NCR credit provider in South Africa. The site clearly presents once-off credit solutions (personal loans, business credit, debt consolidation), includes a contact form with backend email notifications, WhatsApp integration, responsive design, and SEO foundations.",
+    impact:
+      "Built a complete full-stack marketing & lead-generation website for a real credit business. Delivered clean information architecture, modern UI/UX, form → database → email automation flow, mobile-first responsive layout, and basic on-page SEO structure — all in a production-ready deployment.",
+    tech: [
+      "React.js + React Router",
+      "Tailwind CSS (custom color palette)",
+      "Node.js + Express.js",
+      "MongoDB (via Mongoose)",
+      "Nodemailer (HTML email templates)",
+      "react-hook-form + axios",
+      "react-slick (testimonials carousel)",
+      "Netlify (frontend) + Render/Heroku/etc (backend)",
+      "Google Maps embed, WhatsApp wa.me links",
+    ],
+    github: "https://github.com/agurchu/million-family-business",
+    live: "https://millionfb.co.za/",
+  },
 ];
 
 export const skills = {
@@ -150,8 +170,6 @@ export const experience = [
     description:
       "Designed and developed backend services using Java and Spring Boot. Built RESTful APIs integrated with MySQL databases. Implemented clean architecture principles to improve maintainability and scalability. Delivered full-stack solutions while maintaining backend performance standards.",
   },
-
-  // ... add others
 ];
 
 export const education = [
@@ -176,12 +194,10 @@ export const education = [
     skills:
       "Python, Java, System Integration, Algorithms, Data Structures, +15 technical skills",
   },
-  // ... others
 ];
 
 export const socials = {
-  github: "https://github.com/katlegojdev",
-  linkedin: "https://linkedin.com/in/katlego-mtimane", // update real link
+  github: "https://github.com/agurchu",
+  linkedin: "https://www.linkedin.com/in/katlegojdev/",
   email: "katlegoj.dev@gmail.com",
-  phone: "+27 63 734 2965",
 };
