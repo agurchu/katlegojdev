@@ -2,9 +2,11 @@
 import { motion } from "framer-motion";
 import React from "react";
 import SectionTitle from "../components/SectionTitle";
-import { experience } from "../data/portfolioData";
+import { experienceMock } from "../data/portfolioData";
 
 export default function Experience() {
+  const { data: experience, loading, error } = useGoogleSheet("experience");
+  if (loading) return <div className="text-center py-20">Loading...</div>;
   return (
     <section className="max-w-6xl mx-auto">
       <SectionTitle>Work Experience</SectionTitle>

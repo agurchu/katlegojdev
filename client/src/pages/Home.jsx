@@ -3,10 +3,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
 // import Services from "../components/Services";
-import { projects, socials } from "../data/portfolioData";
+import { socials } from "../data/portfolioData";
 import Experience from "./Experience";
+import useGoogleSheet from "../hook/useGoogleSheet";
 
 export default function Home() {
+  const { data: projects, loading, error } = useGoogleSheet("projects");
   const featuredProjects = projects.slice(0, 6); // show top 6 on home
 
   return (
@@ -45,41 +47,39 @@ export default function Home() {
                   </p>
                 </div>
 
-         
-                  <div className="flex flex-col">
+                <div className="flex flex-col">
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=katlegoj.dev@gmail.com"
+                    className="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-xl font-semibold text-white transition-all shadow-lg shadow-cyan-900/30 transform hover:scale-[1.02] active:scale-95"
+                  >
+                    <Mail size={20} />
+                    Let's talk
+                  </a>
+                  <div className="flex justify-center gap-8 mt-6 text-2xl">
                     <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=katlegoj.dev@gmail.com"
-                      className="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-xl font-semibold text-white transition-all shadow-lg shadow-cyan-900/30 transform hover:scale-[1.02] active:scale-95"
+                      href={socials.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-blue-400 transition"
                     >
-                      <Mail size={20} />
-                      Let's talk
+                      <FaGithub />
                     </a>
-                    <div className="flex justify-center gap-8 mt-6 text-2xl">
-                      <a
-                        href={socials.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition"
-                      >
-                        <FaGithub />
-                      </a>
-                      <a
-                        href={socials.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition"
-                      >
-                        <FaLinkedin />
-                      </a>
-                      <a
-                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${socials.email}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition"
-                      >
-                        <Mail />
-                      </a>
-                 
+                    <a
+                      href={socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-blue-400 transition"
+                    >
+                      <FaLinkedin />
+                    </a>
+                    <a
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${socials.email}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-blue-400 transition"
+                    >
+                      <Mail />
+                    </a>
                   </div>
                 </div>
 
@@ -139,6 +139,8 @@ export default function Home() {
       <section className="max-w-6xl mx-auto">
         <SectionTitle>Featured Projects</SectionTitle>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {loading && <div className="text-center py-20">Loading...</div>}
+          {error && <div>Error: {error}</div>}
           {featuredProjects.map((project, i) => (
             <ProjectCard key={i} project={project} index={i} />
           ))}

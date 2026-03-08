@@ -1,18 +1,21 @@
 // src/pages/Projects.jsx
 import { useState } from "react";
-import { projects } from "../data/portfolioData";
+// import { projects } from "../data/portfolioData";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
+import useGoogleSheet from "../hook/useGoogleSheet";
 
 const categories = ["All", "Backend", "Full-Stack", "Integration", "Cloud"];
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
+  const { data: projects, loading, error } = useGoogleSheet("projects");
+
+  if (loading) return <div className="text-center py-20">Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   const filteredProjects =
-    filter === "All"
-      ? projects
-      : projects.filter((p) => p.category === filter);
+    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <div className="space-y-16 max-w-6xl mx-auto">
@@ -37,7 +40,9 @@ export default function Projects() {
 
       {/* Projects grid */}
       {filteredProjects.length === 0 ? (
-        <p className="text-center text-slate-400 py-20">No projects in this category yet.</p>
+        <p className="text-center text-slate-400 py-20">
+          No projects in this category yet.
+        </p>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, i) => (

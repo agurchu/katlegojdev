@@ -21,16 +21,37 @@ export default function ProjectCard({ project, index }) {
             {project.category}
           </span>
         </div>
-
-        <p className="text-slate-400 mb-4 line-clamp-3">{project.description}</p>
+        {/*  Image section (optional) */}
+        {project.image_url && (
+          <div className="mb-4 overflow-hidden rounded-xl">
+            <img
+              src={project.image_url || "/fallback-project.png"}
+              alt={project.title}
+              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              onError={(e) => {
+                e.target.src = "/fallback-project.png";
+              }}
+            />
+          </div>
+        )}
+        <p className="text-slate-400 mb-4 line-clamp-3">
+          {project.description}
+        </p>
         <p className="text-sm italic text-slate-500 mb-6">{project.impact}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.tech.map((t) => (
-            <span key={t} className="text-xs px-3 py-1 bg-slate-800/70 rounded-full text-primary">
-              {t}
-            </span>
-          ))}
+          {(() => {
+            const techList = project.tech.split(",").map((t) => t.trim());
+            return techList.map((t, index) => (
+              <span
+                key={index}
+                className="text-xs px-3 py-1 bg-slate-800/70 rounded-full text-primary"
+              >
+                {t}
+              </span>
+            ));
+          })()}
         </div>
 
         <div className="flex gap-4">
