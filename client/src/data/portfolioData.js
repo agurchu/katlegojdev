@@ -35,17 +35,6 @@ export const projects = [
     github: "https://github.com/katlegojdev/azure-project",
     live: "#",
   },
-  {
-    title: "Azure Cloud Deployment Project",
-    category: "Cloud",
-    description:
-      "Deployed and configured applications on Microsoft Azure including networking and virtual environments.",
-    impact:
-      "Optimized deployment pipeline reducing environment setup time by 50%.",
-    tech: ["Microsoft Azure", "Virtual Networks", "Cloud Architecture"],
-    github: "https://github.com/yourusername/azure-project",
-    live: "#",
-  },
 
   {
     title: "System Integration Project",
@@ -175,7 +164,7 @@ export const experience = [
 export const education = [
   {
     institution: "WeThinkCode_",
-    degree: "Diploma of Education, Computer Science",
+    degree: "NQF 6, Software Engineering",
     period: "Feb 2025 - May 2026",
     skills:
       "Python, Java, System Integration, Algorithms, Data Structures, +15 technical skills",
