@@ -22,7 +22,7 @@ export default function ProjectCard({ project, index }) {
           </span>
         </div>
         {/*  Image section (optional) */}
-        {project.image_url && (
+        {/* {project.image_url && (
           <div className="mb-4 overflow-hidden rounded-xl">
             <img
               src={project.image_url || "/fallback-project.png"}
@@ -34,7 +34,7 @@ export default function ProjectCard({ project, index }) {
               }}
             />
           </div>
-        )}
+        )} */}
         <p className="text-slate-400 mb-4 line-clamp-3">
           {project.description}
         </p>

@@ -12,56 +12,36 @@ import Skills from "./pages/Skills";
 import { loadLinksPreset } from "@tsparticles/preset-links";
 import Particles from "@tsparticles/react"; // ← new import
 import { useCallback } from "react";
+import BottomNav from "./components/BottomNav";
+import ProjectChat from "./pages/ProjectChat";
+import Statuses from "./pages/Statuses";
+import Profile from "./pages/Profile";
+import ExperienceDetail from "./pages/ExperienceDetail";
 
 export default function App() {
   const particlesInit = useCallback(async (engine) => {
     await loadLinksPreset(engine); // This should now succeed without checkVersion error
   }, []);
   return (
-      <BrowserRouter>
-    <div className="min-h-screen bg-gradient-to-b from-slate-1 to-slate-2 text-slate-100">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          preset: "links", // or full custom options
-          background: { color: { value: "transparent" } },
-          particles: {
-            number: { value: 40 },
-            color: { value: "#334155" },
-            links: {
-              enable: true,
-              distance: 150,
-              color: "#334155",
-              opacity: 0.4,
-            },
-            move: { enable: true, speed: 0.8 },
-          },
-          interactivity: {
-            events: { onhover: { enable: true, mode: "grab" } },
-          },
-          // Add more options as needed
-        }}
-        className="fixed inset-0 pointer-events-none z-0"
-      />
-      <ScrollProgress />
-
-      <Navbar />
-      <main className="pt-20 pb-16  sm:px-6  mx-auto">
-       
-     
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-     
-      </main>
-      <Footer />
-    </div>
-       </BrowserRouter>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gradient-to-b from-slate-1 to-slate-2 text-slate-100">
+        {/* <Navbar /> */}
+        <main className="mx-auto">
+          <Routes>
+            <Route path="/" element={<Projects />} />
+            <Route path="/projects/:projectTitle" element={<ProjectChat />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/statuses" element={<Statuses />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/experience/:index" element={<ExperienceDetail />} />
+            {/* <Route path="/education" element={<Education />} /> */}
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </main>
+        {/* <Footer /> */}
+        <BottomNav />
+      </div>
+    </BrowserRouter>
   );
 }

@@ -144,7 +144,7 @@ export const skills = {
   ],
 };
 
-export const experience = [
+export const experienceMock = [
   {
     company: "NjinjiCom",
     role: "Cloud Engineer Intern - Microsoft Azure",
@@ -161,7 +161,7 @@ export const experience = [
   },
 ];
 
-export const education = [
+export const educationMock = [
   {
     institution: "WeThinkCode_",
     degree: "NQF 6, Software Engineering",

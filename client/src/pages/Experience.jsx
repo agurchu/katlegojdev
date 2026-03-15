@@ -3,62 +3,70 @@ import { motion } from "framer-motion";
 import React from "react";
 import SectionTitle from "../components/SectionTitle";
 import { experienceMock } from "../data/portfolioData";
+import useGoogleSheet from "../hook/useGoogleSheet";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft, Users } from "lucide-react";
 
 export default function Experience() {
   const { data: experience, loading, error } = useGoogleSheet("experience");
+  const navigate = useNavigate();
   if (loading) return <div className="text-center py-20">Loading...</div>;
-  return (
-    <section className="max-w-6xl mx-auto">
-      <SectionTitle>Work Experience</SectionTitle>
-      <div className="px-6  py-10 bg-slate-2/40 backdrop-blur-md border border-slate-3/50 rounded-2xl shadow-xl">
-        <div className="relative grid gap-12">
-          {/* Timeline Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-white"></div>
-
-          {experience.map((exp, index) => (
-            <React.Fragment key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="relative grid md:grid-cols-2 gap-6 items-start"
-              >
-                {/* Left Side */}
-                <div
-                  className={`${
-                    index % 2 === 0
-                      ? "md:text-right md:pr-12"
-                      : "md:order-2 md:pl-12"
-                  }`}
-                >
-                  <h3 className="text-2xl font-semibold">{exp.company}</h3>
-                  <p className="text-gray-500">{exp.period}</p>
-                </div>
-
-                {/* Center Dot */}
-                <div className="hidden left-1/2 translate-x-[-50%] top-0 absolute md:flex justify-center items-center">
-                  <div className="w-6 h-6 rounded-full bg-primary border-4 border-white shadow-md z-10"></div>
-                </div>
-
-                {/* Right Side */}
-                <div
-                  className={`${
-                    index % 2 === 0
-                      ? "md:pl-12"
-                      : "md:text-right md:pr-12 md:order-1"
-                  }`}
-                >
-                  <h4 className="text-xl font-semibold mb-2">{exp.role}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    {exp.description}
-                  </p>
-                </div>
-              </motion.div>
-            </React.Fragment>
-          ))}
-        </div>
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen bg-[#111B21] text-red-400">
+        <p>Error loading experience</p>
+        <p className="text-sm mt-2">{error}</p>
       </div>
-    </section>
+    );
+  }
+  return (
+    <div className="flex flex-col h-screen bg-[#111B21]">
+      {/* Header */}
+      <header className="bg-[#202C33] px-4 py-3 flex items-center gap-4">
+        <button
+          onClick={() => navigate("/")}
+          className="p-2 -ml-2 text-[#8696A0]"
+        >
+          <ArrowLeft size={24} />
+        </button>
+        <div>
+          <h1 className="text-white text-xl font-medium">Experience</h1>
+          <p className="text-xs text-[#8696A0]">My professional background</p>
+        </div>
+      </header>
+
+      {/* Communities List */}
+      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+        {experience.map((exp, index) => (
+          <div
+            key={index}
+            onClick={() => navigate(`/experience/${index}`)} // optional detail
+            className="bg-[#202C33] rounded-2xl overflow-hidden hover:bg-[#2A3942] transition-colors cursor-pointer"
+          >
+            <div
+              className={`h-32 ${exp.bgColor} flex items-center justify-center`}
+            >
+              <div className="text-white text-6xl font-bold opacity-70">
+                {exp.role[0]}
+              </div>
+            </div>
+            <div className="p-4">
+              <h3 className="font-medium text-white text-lg">{exp.role}</h3>
+              {exp.company && (
+                <p className="text-[#00A884] text-sm mt-0.5">{exp.company}</p>
+              )}
+              <p className="text-sm text-[#8696A0] mt-1">{exp.period}</p>
+              <p className="text-sm text-[#D1D7DB] mt-2 line-clamp-2">
+                {exp.description}
+              </p>
+              <div className="flex items-center gap-2 mt-3 text-xs text-[#8696A0]">
+                <Users size={14} />
+                <span>{exp.members}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
