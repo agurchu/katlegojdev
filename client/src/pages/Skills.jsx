@@ -16,21 +16,21 @@ const skillGroups = [
     id: "programming",
     title: "Programming",
     icon: <Code size={40} className="text-white" />,
-    bgColor: "bg-[#00A884]",
+    bgColor: "bg-primary",
     items: ["Java (OOP, Spring Boot)", "Python", "JavaScript", "HTML", "CSS"],
   },
   {
     id: "frameworks",
     title: "Frameworks & Tools",
     icon: <Wrench size={40} className="text-white" />,
-    bgColor: "bg-[#128C7E]",
+    bgColor: "bg-accent",
     items: ["React", "Redux", "Tailwind CSS", "Spring Boot", "Git", "Maven"],
   },
   {
     id: "cloud",
     title: "Cloud & DevOps",
     icon: <Cloud size={40} className="text-white" />,
-    bgColor: "bg-[#075E54]",
+    bgColor: "bg-primary",
     items: [
       "Microsoft Azure",
       "Azure Virtual Desktop",
@@ -56,7 +56,7 @@ const skillGroups = [
     id: "tools",
     title: "Tools & Practices",
     icon: <Wrench size={40} className="text-white" />,
-    bgColor: "bg-[#00A884]",
+    bgColor: "bg-primary",
     items: [
       "Git",
       "Maven",
@@ -71,7 +71,7 @@ const skillGroups = [
     id: "soft",
     title: "Soft Skills",
     icon: <Users size={40} className="text-white" />,
-    bgColor: "bg-[#128C7E]",
+    bgColor: "bg-accent",
     items: [
       "Problem Solving",
       "Team Collaboration",
@@ -157,7 +157,7 @@ export default function Skills() {
           <div className="p-4 border-t border-[#202C33]">
             <button
               onClick={closeGroup}
-              className="w-full bg-[#00A884] text-black py-3.5 rounded-xl font-medium"
+              className="w-full bg-primary text-black py-3.5 rounded-xl font-medium"
             >
               Back to Skills
             </button>

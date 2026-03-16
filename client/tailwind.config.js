@@ -1,11 +1,11 @@
-const { Background } = require('@tsparticles/engine');
+const { Background } = require("@tsparticles/engine");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx}",           // core – must have .jsx
-    "./src/**/**/*.{js,jsx}",        // nested folders safety
+    "./src/**/*.{js,jsx}", // core – must have .jsx
+    "./src/**/**/*.{js,jsx}", // nested folders safety
     "./src/pages/**/*.{js,jsx}",
     "./src/components/**/*.{js,jsx}",
   ],
@@ -19,13 +19,14 @@ module.exports = {
       // Extend – do NOT override the full slate palette
       colors: {
         slate: {
-          1: '#020617',
-          2: '#0f172a',
-          3: '#1e293b',
+          1: "#111B21",
+          2: "#0f172a",
+          3: "#1e293b",
         },
-        primary: "#22d3ee",
-        secondary: "#60a5fa",
-        background: "#020617",
+        primary: "#0092a8",
+        secondary: "#00525e",
+        accent: "#22d3ee",
+        background: "#111B21",
       },
 
       backdropBlur: {
@@ -48,4 +49,4 @@ module.exports = {
   },
 
   plugins: [],
-}
+};

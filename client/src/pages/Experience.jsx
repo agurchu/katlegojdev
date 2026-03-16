@@ -53,7 +53,7 @@ export default function Experience() {
             <div className="p-4">
               <h3 className="font-medium text-white text-lg">{exp.role}</h3>
               {exp.company && (
-                <p className="text-[#00A884] text-sm mt-0.5">{exp.company}</p>
+                <p className="text-primary text-sm mt-0.5">{exp.company}</p>
               )}
               <p className="text-sm text-[#8696A0] mt-1">{exp.period}</p>
               <p className="text-sm text-[#D1D7DB] mt-2 line-clamp-2">

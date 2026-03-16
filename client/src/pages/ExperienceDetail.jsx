@@ -15,7 +15,7 @@ export default function ExperienceDetail() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-[#111B21] text-[#00A884]">
+      <div className="flex items-center justify-center h-screen bg-[#111B21] text-primary">
         Loading experience details...
       </div>
     );
@@ -28,7 +28,7 @@ export default function ExperienceDetail() {
         {error && <p className="text-sm mt-2">{error}</p>}
         <button
           onClick={() => navigate("/experience")}
-          className="mt-6 px-6 py-3 bg-[#00A884] text-black rounded-xl font-medium"
+          className="mt-6 px-6 py-3 bg-primary text-black rounded-xl font-medium"
         >
           Back to Experience
         </button>
@@ -44,7 +44,7 @@ export default function ExperienceDetail() {
         <p>Experience entry not found</p>
         <button
           onClick={() => navigate("/experience")}
-          className="mt-6 text-[#00A884] underline"
+          className="mt-6 text-primary underline"
         >
           Back to list
         </button>
@@ -110,7 +110,7 @@ export default function ExperienceDetail() {
         </button>
 
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-[#00A884] rounded-full flex items-center justify-center text-black font-bold">
+          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-black font-bold">
             {exp.image_url ? (
               <img
                 src={exp.image_url}
@@ -140,7 +140,7 @@ export default function ExperienceDetail() {
             key={msg.id}
             className={`max-w-[80%] rounded-2xl px-4 py-2.5 relative group ${
               msg.isYou
-                ? "bg-[#005E54] text-white ml-auto rounded-tr-none shadow-md after:content-[''] after:absolute after:top-0 after:right-[-8px] after:border-8 after:border-transparent after:border-l-[#005E54]"
+                ? "bg-secondary text-white ml-auto rounded-tr-none shadow-md after:content-[''] after:absolute after:top-0 after:right-[-8px] after:border-8 after:border-transparent after:border-l-secondary"
                 : "bg-[#202C33] text-white mr-auto rounded-tl-none shadow-md after:content-[''] after:absolute after:top-0 after:left-[-8px] after:border-8 after:border-transparent after:border-r-[#202C33]"
             }`}
           >

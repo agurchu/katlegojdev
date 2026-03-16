@@ -31,7 +31,7 @@ export default function Profile() {
         {/* Avatar + name section */}
         <div className="bg-[#202C33] px-6 py-10 flex flex-col items-center">
           <div className="relative mb-4">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#00A884]">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary">
               <img
                 src="https://media.licdn.com/dms/image/v2/D4D35AQFA3KPwzNwrxw/profile-framedphoto-shrink_200_200/B4DZyprfDzHIAY-/0/1772373275149?e=1774191600&v=beta&t=FNVAfeczZ0reUUssczm1zjmMf_hxOkAjyyg0zdIkHZg"
                 alt="Katlego J. Mtimane"
@@ -39,7 +39,7 @@ export default function Profile() {
               />
             </div>
             {/* Green online ring */}
-            <span className="absolute bottom-2 right-2 w-5 h-5 bg-[#00A884] rounded-full border-3 border-[#202C33] shadow-md" />
+            <span className="absolute bottom-2 right-2 w-5 h-5 bg-primary rounded-full border-3 border-[#202C33] shadow-md" />
           </div>
 
           <h2 className="text-2xl font-bold text-white mb-1">
@@ -55,7 +55,7 @@ export default function Profile() {
 
         {/* About / Bio section */}
         <div className="bg-[#111B21] px-6 py-6 border-b border-[#202C33]">
-          <h3 className="text-[#00A884] text-sm font-medium uppercase mb-3">
+          <h3 className="text-primary text-sm font-medium uppercase mb-3">
             About
           </h3>
           <p className="text-[#D1D7DB] leading-relaxed">
@@ -72,7 +72,7 @@ export default function Profile() {
         </div>
         {/* Education – new section */}
         <div className="bg-[#111B21] px-6 py-6 border-b border-[#202C33]">
-          <h3 className="text-[#00A884] text-sm font-medium uppercase mb-4 flex items-center gap-2">
+          <h3 className="text-primary text-sm font-medium uppercase mb-4 flex items-center gap-2">
             <GraduationCap size={18} />
             Education
           </h3>
@@ -88,17 +88,17 @@ export default function Profile() {
               {education.map((edu, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#202C33] p-4 rounded-xl border border-[#2A3942] hover:border-[#00A884]/50 transition-colors"
+                  className="bg-[#202C33] p-4 rounded-xl border border-[#2A3942] hover:border-primary/50 transition-colors"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#00A884]/20 flex items-center justify-center flex-shrink-0">
-                      <GraduationCap size={20} className="text-[#00A884]" />
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <GraduationCap size={20} className="text-primary" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-medium text-white">
                         {edu.institution}
                       </h4>
-                      <p className="text-sm text-[#00A884] mt-0.5">
+                      <p className="text-sm text-primary mt-0.5">
                         {edu.degree}
                       </p>
                       <p className="text-xs text-[#8696A0] mt-1">
@@ -123,7 +123,7 @@ export default function Profile() {
             href={`https://mail.google.com/mail/?view=cm&fs=1&to=${socials.email}`}
             className="flex items-center gap-4 px-5 py-4 bg-[#202C33] rounded-xl hover:bg-[#2A3942] transition-colors"
           >
-            <div className="w-12 h-12 bg-[#00A884] rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
               <Mail size={24} className="text-black" />
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function Profile() {
             href="tel:+27637342965"
             className="flex items-center gap-4 px-5 py-4 bg-[#202C33] rounded-xl hover:bg-[#2A3942] transition-colors"
           >
-            <div className="w-12 h-12 bg-[#00A884] rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
               <Phone size={24} className="text-black" />
             </div>
             <div>
@@ -148,7 +148,7 @@ export default function Profile() {
 
         {/* Social links */}
         <div className="px-6 py-6 border-t border-[#202C33]">
-          <h3 className="text-[#00A884] text-sm font-medium uppercase mb-4">
+          <h3 className="text-primary text-sm font-medium uppercase mb-4">
             Find me online
           </h3>
           <div className="flex gap-6">
@@ -157,7 +157,7 @@ export default function Profile() {
               target="_blank"
               className="flex flex-col items-center"
             >
-              <FaGithub size={32} className="text-[#00A884] mb-1" />
+              <FaGithub size={32} className="text-primary mb-1" />
               <span className="text-xs text-[#8696A0]">GitHub</span>
             </a>
             <a
@@ -165,7 +165,7 @@ export default function Profile() {
               target="_blank"
               className="flex flex-col items-center"
             >
-              <FaLinkedin size={32} className="text-[#00A884] mb-1" />
+              <FaLinkedin size={32} className="text-primary mb-1" />
               <span className="text-xs text-[#8696A0]">LinkedIn</span>
             </a>
           </div>

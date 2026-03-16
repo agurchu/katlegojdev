@@ -28,7 +28,7 @@ export default function App() {
         {/* <Navbar /> */}
         <main className="mx-auto">
           <Routes>
-            <Route path="/" element={<Projects />} />
+            <Route path="/" element={<Profile />} />
             <Route path="/projects/:projectTitle" element={<ProjectChat />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/profile" element={<Profile />} />

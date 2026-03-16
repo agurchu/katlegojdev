@@ -41,7 +41,7 @@ export default function Projects() {
       </header>
 
       {/* Filters (horizontal scrollable like WhatsApp status) */}
-      <div className="bg-[#12172b] px-4 py-3 flex gap-2 overflow-x-auto scrollbar-hide border-b border-[#202C33]">
+      <div className="bg-[#12202b] px-4 py-3 flex gap-2 overflow-x-auto scrollbar-hide border-b border-[#202C33]">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -86,7 +86,7 @@ export default function Projects() {
             <Link
               key={project.title}
               to={`/projects/${encodeURIComponent(project.title)}`}
-              className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#1e2230] active:bg-[#31374e] transition-colors"
+              className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#1e2830] active:bg-[#31374e] transition-colors"
             >
               <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-primary relative">
                 {/* {project.image_url ? (
@@ -110,7 +110,7 @@ export default function Projects() {
                         project.live &&
                         project.live !== "#" &&
                         project.live.trim() !== ""
-                          ? "bg-[#00A884]"
+                          ? "bg-primary"
                           : "bg-gray-500"
                       }`}
                     />
@@ -136,7 +136,7 @@ export default function Projects() {
       </div>
       <button
         onClick={() => navigate("/statuses")}
-        className="fixed bottom-20 right-6 bg-[#00A884] text-black p-4 rounded-full shadow-2xl z-40"
+        className="fixed bottom-20 right-6 bg-primary text-black p-4 rounded-full shadow-2xl z-40"
       >
         <Play size={28} />
       </button>

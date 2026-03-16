@@ -22,7 +22,7 @@ export default function BottomNav() {
             ) =>
               `flex flex-col items-center justify-center flex-1 py-1 transition-colors ${
                 isActive
-                  ? "text-[#00A884]" // active = WhatsApp green
+                  ? "text-primary" // active = WhatsApp green
                   : "text-[#8696A0] hover:text-[#AEBAC1]"
               }`
             }
