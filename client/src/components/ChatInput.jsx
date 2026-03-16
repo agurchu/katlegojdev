@@ -21,7 +21,7 @@ export default function ChatInput({ chatName }) {
     }
   };
   return (
-    <div className="bg-[#202c33] border-t border-[#2a3942] px-4 py-3 flex items-center gap-3">
+    <div className="bg-background rounded-full border-[#2a3942] px-2 py-2 flex items-center gap-2 w-full">
       {/* emoji picker */}
       <button className="p-2 text-[#8696a0] hover:text-[#aebac1] rounded-full hover:bg-[#2a3942] transition-colors duration-200">
         <span role="img" aria-label="smiley">
@@ -37,13 +37,14 @@ export default function ChatInput({ chatName }) {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder={`Message about ${chatName}...`}
-          className="w-full bg-[#2a3942] text-white placeholder-[#8696a0] px-5 py-3 rounded-full outline-none text-sm"
+          className="w-full bg-transparent text-white placeholder-[#8696a0] px-1   rounded-full outline-none text-lg"
         />
       </div>
       {/* Send button */}
       <button
+        disabled={!message.trim()}
         onClick={handleSend}
-        className={`p-2 text-[#8696a0] hover:text-[#aebac1] rounded-full hover:bg-[#2a3942] transition-colors duration-200 ${message.trim() ? "bg-[#00a884] text-black hover:bg-[#00c853] active:scale-95" : "cursor-not-allowed bg-[#2a3942] text-[#8696a0]"}`}
+        className={`p-2 text-[#8696a0] hover:text-[#aebac1] rounded-full hover:bg-[#2a3942] transition-colors duration-200 ${message.trim() ? "bg-primary text-black hover:bg-secondary active:scale-95" : "cursor-not-allowed bg-[#2a3942] text-[#4e5b63]"}`}
       >
         {/* <span role='img' aria-label='send'>📤</span> */}
         <Send size={20} />

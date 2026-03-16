@@ -1,9 +1,8 @@
 // src/pages/Projects.jsx
+import { Play, Search } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Play, Search } from "lucide-react";
 import useGoogleSheet from "../hook/useGoogleSheet";
-import { extractDriveId } from "../components/extractDriveId";
 
 export default function Projects() {
   const navigate = useNavigate();
@@ -48,8 +47,8 @@ export default function Projects() {
             onClick={() => setFilter(cat)}
             className={`px-5 py-1.5 text-sm font-medium rounded-full whitespace-nowrap transition-all ${
               filter === cat
-                ? "bg-primary] text-black"
-                : "bg-[#303447] text-[#5b627e] hover:bg-[#2e3449]"
+                ? "bg-primary] text-[#aebac1]"
+                : "bg-[#293e44] text-[#738e9e] hover:bg-[#3e535e]"
             }`}
           >
             {cat}

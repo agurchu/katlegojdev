@@ -21,4 +21,6 @@
   }
 }
 
-
+.btn {
+  @apply flex-col w-16 h-16 text-[10px] bg-primary text-black px-2 rounded-full font-medium flex items-center justify-center gap-2 active:scale-95 transition-transform hover:bg-secondary hover:text-[#aebac1] duration-200;
+}

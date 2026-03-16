@@ -1,15 +1,16 @@
 // src/pages/Skills.jsx
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
-  Code,
-  Server,
   Cloud,
+  Code,
   Database,
-  Wrench,
+  Server,
+  Undo2,
   Users,
+  Wrench,
 } from "lucide-react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const skillGroups = [
   {
@@ -142,11 +143,11 @@ export default function Skills() {
           </div>
 
           {/* List of skills */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-4">
+          <div className="flex-1 flex flex-col gap-4 overflow-y-auto p-6 space-y">
             {selectedGroup.items.map((skill, idx) => (
               <div
                 key={idx}
-                className="bg-[#202C33] p-4 rounded-xl border border-[#2A3942]"
+                className="bg-[#202C33] p-4  rounded-xl border border-[#2A3942]"
               >
                 <p className="text-[#D1D7DB]">{skill}</p>
               </div>
@@ -154,12 +155,9 @@ export default function Skills() {
           </div>
 
           {/* Back button */}
-          <div className="p-4 border-t border-[#202C33]">
-            <button
-              onClick={closeGroup}
-              className="w-full bg-primary text-black py-3.5 rounded-xl font-medium"
-            >
-              Back to Skills
+          <div className="p-4 mb-16 fixed bottom-0 right-0 border-[#202C33]">
+            <button onClick={closeGroup} className="btn">
+              <Undo2 />
             </button>
           </div>
         </div>

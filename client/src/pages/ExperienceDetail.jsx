@@ -1,6 +1,7 @@
 // src/pages/ExperienceDetail.jsx
-import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Users, Calendar, Briefcase } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate, useParams } from "react-router-dom";
+import ChatInput from "../components/ChatInput";
 import useGoogleSheet from "../hook/useGoogleSheet";
 
 export default function ExperienceDetail() {
@@ -99,7 +100,7 @@ export default function ExperienceDetail() {
   ];
 
   return (
-    <div className="flex flex-col h-screen bg-[#111B21]">
+    <div className="flex flex-col h-screen bg-[#0A2F2F]">
       {/* Header – like WhatsApp contact header */}
       <header className="bg-[#202C33] px-4 py-3 flex items-center gap-4">
         <button
@@ -153,6 +154,11 @@ export default function ExperienceDetail() {
             </div>
           </div>
         ))}
+      </div>
+      <div className=" px-4 border-t border-none flex gap-2 fixed bottom-20 left-0 right-0">
+        <div className="flex flex-1 rounded-xl">
+          <ChatInput chatName={exp.role + " at " + exp.company} />
+        </div>
       </div>
     </div>
   );

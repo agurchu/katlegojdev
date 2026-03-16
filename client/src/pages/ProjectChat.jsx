@@ -1,8 +1,9 @@
 // src/pages/ProjectChat.jsx
-import { useParams, useNavigate } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
-import useGoogleSheet from "../hook/useGoogleSheet";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { useNavigate, useParams } from "react-router-dom";
+import ChatInput from "../components/ChatInput";
+import useGoogleSheet from "../hook/useGoogleSheet";
 export default function ProjectChat() {
   const { projectTitle } = useParams();
   const navigate = useNavigate();
@@ -92,25 +93,27 @@ export default function ProjectChat() {
       </div>
 
       {/* Bottom action buttons (instead of text input) */}
-      <div className="bg-[#202C33] p-4 border-t border-[#111B21] flex gap-3 fixed bottom-16 left-0 right-0">
+      <div className=" px-4 border-t border-none flex gap-2 fixed bottom-20 left-0 right-0">
         {project.github && project.github !== "#" && (
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-primary text-black py-3.5 rounded-xl font-medium flex items-center justify-center gap-2 active:scale-95 transition-transform"
+            className="btn"
           >
             <FaGithub size={20} />
             GitHub
           </a>
         )}
-
+        <div className="flex flex-1 rounded-xl">
+          <ChatInput chatName={project.title + " Project"} />
+        </div>
         {project.live && project.live !== "#" && (
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-seconary text-black py-3.5 rounded-xl font-medium flex items-center justify-center gap-2 active:scale-95 transition-transform"
+            className="btn"
           >
             <ExternalLink size={20} />
             Live Demo
