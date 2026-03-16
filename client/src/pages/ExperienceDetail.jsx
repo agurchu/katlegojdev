@@ -100,7 +100,7 @@ export default function ExperienceDetail() {
   ];
 
   return (
-    <div className="flex flex-col h-screen bg-[#0A2F2F]">
+    <div className="flex flex-col h-screen bg-[#0A2F2F] pb-32">
       {/* Header – like WhatsApp contact header */}
       <header className="bg-[#202C33] px-4 py-3 flex items-center gap-4">
         <button

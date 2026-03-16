@@ -21,7 +21,7 @@ export default function ChatInput({ chatName }) {
     }
   };
   return (
-    <div className="bg-background rounded-full border-[#2a3942] px-2 py-2 flex items-center gap-2 w-full">
+    <div className="bg-background rounded-full border-[#2a3942] px-2 py-1 flex items-center gap-2 w-full">
       {/* emoji picker */}
       <button className="p-2 text-[#8696a0] hover:text-[#aebac1] rounded-full hover:bg-[#2a3942] transition-colors duration-200">
         <span role="img" aria-label="smiley">

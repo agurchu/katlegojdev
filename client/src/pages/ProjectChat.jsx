@@ -54,18 +54,18 @@ export default function ProjectChat() {
   ];
 
   return (
-    <div className="flex flex-col h-screen bg-[#0A2F2F] mb-8">
+    <div className="flex flex-col h-screen bg-[#0A2F2F]  pb-32">
       {/* Header */}
-      <header className="bg-[#202C33] px-4 py-3 flex fixed items-center gap-4 right-0 left-0 z-10">
+      <header className="bg-[#202C33] px-4 py-3 flex fixed items-center gap-4 right-0 overflow-hidden left-0 z-10">
         <button onClick={() => navigate("/projects")} className="p-2 -ml-2">
           <ArrowLeft size={24} />
         </button>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pr-4">
           <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-black font-medium">
             {project.title?.[0] || "?"}
           </div>
-          <div>
-            <h2 className="font-medium">{project.title}</h2>
+          <div className="pr-4">
+            <h2 className="font-medium text-nowrap">{project.title}</h2>
             <p className="text-xs text-[#8696A0]">{project.category}</p>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function ProjectChat() {
             className="btn"
           >
             <ExternalLink size={20} />
-            Live Demo
+            Live
           </a>
         )}
       </div>
