@@ -7,12 +7,18 @@ import useGoogleSheet from "../hook/useGoogleSheet";
 export default function ProjectChat() {
   const { projectTitle } = useParams();
   const navigate = useNavigate();
-  const { data: projects = [] } = useGoogleSheet("projects");
+  const { data: projects = [], loading } = useGoogleSheet("projects");
 
   const project = projects.find(
     (p) => p.title === decodeURIComponent(projectTitle),
   );
-
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-[#111B21]">
+        <div className="text-primary animate-pulse">Loading chats...</div>
+      </div>
+    );
+  }
   if (!project) {
     return (
       <div className="flex flex-col h-screen bg-[#111c21] items-center justify-center text-[#8696A0]">
