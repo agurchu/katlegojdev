@@ -1,55 +1,79 @@
 // src/pages/Statuses.jsx
-import { useState, useRef, useEffect } from "react";
-import { ArrowLeft, Play, Pause } from "lucide-react";
+import { ArrowLeft, Pause, Play } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import usePortfolioData from "../hooks/usePortfolioData";
+import VideoModal from "../components/VideoModal";
 import useGoogleSheet from "../hook/useGoogleSheet";
 
 export default function Statuses() {
-  const { data: projects = [] } = useGoogleSheet("projects");
+  const { data: projects = [], loading } = useGoogleSheet("projects");
+  const navigate = useNavigate();
+  const projectsWithVideo = projects.filter(
+    (p) => p.video_url && p.video_url !== "#" && p.video_url.trim() !== "",
+  );
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const videoRef = useRef(null);
-  const navigate = useNavigate();
 
-  const currentProject = projects[currentIndex];
-
-  useEffect(() => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.play().catch(() => {});
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [isPlaying, currentIndex]);
-
-  const handleNext = () => {
-    if (currentIndex < projects.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      navigate("/projects"); // back to chat list when finished
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  if (!currentProject)
+  if (loading) {
     return (
       <div className="h-screen bg-black flex items-center justify-center text-white">
-        No demos available
+        Loading...
       </div>
     );
+  }
+  if (projectsWithVideo.length === 0) {
+    return (
+      <div className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center text-white">
+        <p>No Status videos available yet</p>
+        <button
+          onClick={() => navigate("/projects")}
+          className="px-6 py-3 bg-primary text-black rounded-xl font-medium"
+        >
+          Back to Projects
+        </button>
+      </div>
+    );
+  }
+
+  const currentProject = projectsWithVideo[currentIndex];
+  // useEffect(() => {
+  //   if (!videoRef.current) return;
+
+  //   const handleEnded = () => {
+  //     if (currentIndex < projectsWithVideo.length - 1) {
+  //       setCurrentIndex(currentIndex + 1);
+  //     } else {
+  //       navigate("/projects");
+  //     }
+
+  //     videoRef.current.addEventListener("ended", handleEnded);
+
+  //     return () => videoRef.current.removeEventListener("ended", handleEnded);
+  //   };
+  // }, [currentIndex, projectsWithVideo, navigate]);
+  // useEffect(() => {
+  //   if (videoRef.current) {
+  //     if (isPlaying) {
+  //       videoRef.current.play().catch(() => {});
+  //     } else {
+  //       videoRef.current.pause();
+  //     }
+  //   }
+  // }, [isPlaying, currentIndex]);
+
+  const togglePlay = () => setIsPlaying(!isPlaying);
+  const openVideoModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
   return (
     <div className="fixed inset-0 bg-black z-50 flex flex-col">
       {/* Progress bar at top (like WhatsApp) */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gray-600 flex gap-1 px-2 pt-2">
-        {projects.map((_, i) => (
+        {projectsWithVideo.map((_, i) => (
           <div
             key={i}
             className={`flex-1 h-0.5 rounded-full transition-all duration-300 ${
@@ -75,22 +99,22 @@ export default function Statuses() {
         <div className="w-10" /> {/* spacer */}
       </div>
 
-      {/* Video */}
+      {/* Main Video */}
       <div className="flex-1 relative">
         <video
           ref={videoRef}
           src={currentProject.video_url || "https://example.com/fallback.mp4"}
           className="w-full h-full object-cover"
-          loop
+          loop={false}
           playsInline
           muted // remove if you want sound
-          onEnded={handleNext}
+          onClick={togglePlay}
         />
 
         {/* Play/Pause overlay */}
         <button
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity"
+          onClick={togglePlay}
+          className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity z-10"
         >
           {isPlaying ? (
             <Pause size={64} className="text-white opacity-70" />
@@ -101,13 +125,23 @@ export default function Statuses() {
 
         {/* Swipe gestures (left/right) */}
         <div className="absolute inset-0 flex">
-          <div className="flex-1" onClick={handlePrev} />
-          <div className="flex-1" onClick={handleNext} />
+          <div
+            className="flex-1"
+            onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
+          />
+          <div
+            className="flex-1"
+            onClick={() =>
+              setCurrentIndex(
+                Math.min(projectsWithVideo.length - 1, currentIndex + 1),
+              )
+            }
+          />
         </div>
       </div>
 
       {/* Bottom info */}
-      <div className="absolute bottom-16 left-0 right-0 px-6 py-4 bg-gradient-to-t from-black/80 to-transparent">
+      <div className="absolute bottom-16 left-0 right-0 px-6 py-4 bg-gradient-to-t from-black/80 to-transparent z-10">
         <h3 className="text-white text-xl font-semibold">
           {currentProject.title}
         </h3>
@@ -115,6 +149,14 @@ export default function Statuses() {
           {currentProject.description}
         </p>
       </div>
+
+      {/* Video Modal (embedded player) */}
+      <VideoModal
+        isOpen={showModal}
+        onClose={closeModal}
+        videoUrl={currentProject.video_url}
+        title={currentProject.title}
+      />
     </div>
   );
 }

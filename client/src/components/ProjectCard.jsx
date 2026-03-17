@@ -1,82 +1,86 @@
 // src/components/ProjectCard.jsx
-import { motion } from "framer-motion";
-import { Link } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-export default function ProjectCard({ project, index }) {
+export default function ProjectCard({ project }) {
+  const initials = (title) => {
+    if (!title) return "?";
+    const words = title.split(" ");
+    if (words.length === 1) return words[0][0];
+    return words[0][0] + words[1][0];
+  };
+
+  const handleStatusClick = (e) => {
+    e.preventDefault();
+    if (
+      project.video_url &&
+      project.video_url !== "#" &&
+      project.video_url.trim() !== ""
+    ) {
+      window.open(project.video_url, "_blank");
+    } else {
+      // If no video URL, navigate to project details page
+      window.location.href = `/projects/${encodeURIComponent(project.title)}`;
+    }
+  };
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="group bg-slate-900/40 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/20"
+    <Link
+      to={`/projects/${encodeURIComponent(project.title)}`}
+      className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#1e2830] active:bg-[#31374e] transition-colors"
     >
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-semibold group-hover:text-secondary transition-colors">
-            {project.title}
-          </h3>
-          <span className="text-xs px-3 py-1 bg-slate-800 rounded-full text-slate-300">
+      <Link
+        onClick={handleStatusClick}
+        to={
+          project.video_url &&
+          project.video_url !== "#" &&
+          project.video_url.trim() !== ""
+            ? project.video_url
+            : `/projects/${encodeURIComponent(project.title)}`
+        }
+        className={`w-12 h-12 rounded-full flex-shrink-0 bg-primary relative ${
+          project.video_url &&
+          project.video_url !== "#" &&
+          project.video_url.trim() !== ""
+            ? "border-2 border-green-500 "
+            : " "
+        }`}
+      >
+        {/* {project.image_url ? (
+                  <img
+                    src={`https://drive.google.com/uc?export=view&id=${extractDriveId(project.image_url)}`}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : ( */}
+        <div className="w-full h-full flex items-center justify-center text-black font-bold">
+          {initials(project.title)}
+        </div>
+        {/* )} */}
+        {project.video_url && project.video_url !== "#" &&
+          <div className="absolute w-11 h-11 border-background border-2 rounded-full bottom-0 left-0 top-0" />}
+        {/* Green "online" ring — only if live link exists */}
+        {/* {project.live && project.live !== "#" && project.live.trim() !== "" && ( */}
+        <span
+          className={`absolute  -bottom-0.5 -right-0.5 w-4 h-4 rounded-full border-2 border-[#111B21] shadow-sm ${
+            project.live && project.live !== "#" && project.live.trim() !== ""
+              ? "bg-green-500"
+              : "bg-gray-500"
+          }`}
+        />
+        {/* )}{" "} */}
+      </Link>
+
+      <div className="flex-1 min-w-0">
+        <div className="flex justify-between items-baseline">
+          <h3 className="font-medium text-white truncate">{project.title}</h3>
+          <span className="text-xs text-[#8696A0] ml-2 whitespace-nowrap">
             {project.category}
           </span>
         </div>
-        {/*  Image section (optional) */}
-        {/* {project.image_url && (
-          <div className="mb-4 overflow-hidden rounded-xl">
-            <img
-              src={project.image_url || "/fallback-project.png"}
-              alt={project.title}
-              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-              onError={(e) => {
-                e.target.src = "/fallback-project.png";
-              }}
-            />
-          </div>
-        )} */}
-        <p className="text-slate-400 mb-4 line-clamp-3">
-          {project.description}
+        <p className="text-sm text-[#8696A0] line-clamp-1 mt-0.5">
+          {project.description || "No description available"}
         </p>
-        <p className="text-sm italic text-slate-500 mb-6">{project.impact}</p>
-
-        <div className="flex flex-wrap gap-2 mb-6">
-          {(() => {
-            const techList = project.tech.split(",").map((t) => t.trim());
-            return techList.map((t, index) => (
-              <span
-                key={index}
-                className="text-xs px-3 py-1 bg-slate-800/70 rounded-full text-primary"
-              >
-                {t}
-              </span>
-            ));
-          })()}
-        </div>
-
-        <div className="flex gap-4">
-          {project.github !== "#" && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-300 hover:text-secondary transition"
-            >
-              <FaGithub size={18} /> Code
-            </a>
-          )}
-          {project.live !== "#" && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-300 hover:text-secondary transition"
-            >
-              <Link size={18} /> Live
-            </a>
-          )}
-        </div>
       </div>
-    </motion.div>
+    </Link>
   );
 }
