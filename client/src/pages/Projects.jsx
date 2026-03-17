@@ -33,7 +33,7 @@ export default function Projects() {
   }
 
   return (
-    <div className="flex flex-col ]">
+    <div className="flex flex-col pb-20">
       {/* Header */}
       <header className="bg-[#1f253d] px-4 py-3 flex items-center gap-4">
         <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">
