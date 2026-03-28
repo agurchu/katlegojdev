@@ -36,7 +36,7 @@ export default function Profile() {
           <div className="relative mb-4">
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary">
               <img
-                src="https://media.licdn.com/dms/image/v2/D4D35AQFA3KPwzNwrxw/profile-framedphoto-shrink_200_200/B4DZyprfDzHIAY-/0/1772373275149?e=1774191600&v=beta&t=FNVAfeczZ0reUUssczm1zjmMf_hxOkAjyyg0zdIkHZg"
+                src="https://media.licdn.com/dms/image/v2/D4D35AQFA3KPwzNwrxw/profile-framedphoto-shrink_400_400/B4DZyprfDzHIAc-/0/1772373275193?e=1775289600&v=beta&t=N3gQdgcBU7sR4wRWC4NDc-NhyeDAB4DVtD0T9cTownE"
                 alt="Katlego J. Mtimane"
                 className="w-full h-full object-cover"
               />
